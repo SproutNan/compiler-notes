@@ -13,7 +13,7 @@
     
     
       
-        <title>1 上下文无关文法的定义 - Compiler Notes</title>
+        <title>2 LL(1)文法 - Compiler Notes</title>
       
     
     
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1 上下文无关文法的定义
+              2 LL(1)文法
             
           </span>
         </div>
@@ -284,14 +284,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       
       
@@ -312,69 +310,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          1 上下文无关文法的定义
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../2%20%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95/1%20%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95%E7%9A%84%E5%AE%9A%E4%B9%89/" class="md-nav__link">
         1 上下文无关文法的定义
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    定义
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    示例
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    推导
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    其他定义
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -386,7 +326,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../2%20%E4%BA%8C%E4%B9%89%E6%80%A7/" class="md-nav__link">
+      <a href="../../2%20%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95/2%20%E4%BA%8C%E4%B9%89%E6%80%A7/" class="md-nav__link">
         2 二义性
       </a>
     </li>
@@ -400,7 +340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../3%20%E6%B6%88%E9%99%A4%E5%B7%A6%E9%80%92%E5%BD%92/" class="md-nav__link">
+      <a href="../../2%20%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95/3%20%E6%B6%88%E9%99%A4%E5%B7%A6%E9%80%92%E5%BD%92/" class="md-nav__link">
         3 消除左递归
       </a>
     </li>
@@ -414,7 +354,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4%20%E6%8F%90%E5%B7%A6%E5%9B%A0%E5%AD%90/" class="md-nav__link">
+      <a href="../../2%20%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95/4%20%E6%8F%90%E5%B7%A6%E5%9B%A0%E5%AD%90/" class="md-nav__link">
         4 提左因子
       </a>
     </li>
@@ -434,12 +374,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       
       
@@ -462,7 +404,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../3%20%E8%87%AA%E4%B8%8A%E8%80%8C%E4%B8%8B%E5%88%86%E6%9E%90/1%20%E4%B8%80%E8%88%AC%E6%96%B9%E6%B3%95/" class="md-nav__link">
+      <a href="../1%20%E4%B8%80%E8%88%AC%E6%96%B9%E6%B3%95/" class="md-nav__link">
         1 一般方法
       </a>
     </li>
@@ -474,11 +416,94 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../3%20%E8%87%AA%E4%B8%8A%E8%80%8C%E4%B8%8B%E5%88%86%E6%9E%90/2%20LL%281%29%E6%96%87%E6%B3%95/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          2 LL(1)文法
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         2 LL(1)文法
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    分析预定义
+  </a>
+  
+    <nav class="md-nav" aria-label="分析预定义">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    开始符号集
+  </a>
+  
+    <nav class="md-nav" aria-label="开始符号集">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    算法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    后继符号集
+  </a>
+  
+    <nav class="md-nav" aria-label="后继符号集">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    算法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -516,29 +541,54 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    定义
+    分析预定义
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="分析预定义">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    示例
+    开始符号集
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="开始符号集">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    推导
+    算法
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    其他定义
+    后继符号集
   </a>
+  
+    <nav class="md-nav" aria-label="后继符号集">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    算法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -557,77 +607,58 @@
                   
 
 
-  <h1>1 上下文无关文法的定义</h1>
+  <h1>2 LL(1)文法</h1>
 
-<p>文法，可以理解成某一类东西的产生规则。</p>
-<h2 id="_1">定义</h2>
-<p>一个上下文无关文法 <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span> 是一个四元组，其包含：</p>
-<p>（Ⅰ）一个非空有限集合 <span class="arithmatex"><span class="MathJax_Preview">V_T</span><script type="math/tex">V_T</script></span>，称之为终结符（记号名）的集合。</p>
-<p>（Ⅱ）一个非空有限集合 <span class="arithmatex"><span class="MathJax_Preview">V_N</span><script type="math/tex">V_N</script></span>，称之为非终结符的集合。</p>
-<blockquote>
-<p>可以理解成，非终结符是可以再分的。可以 <span class="arithmatex"><span class="MathJax_Preview">N→AB</span><script type="math/tex">N→AB</script></span>，<span class="arithmatex"><span class="MathJax_Preview">N→aB</span><script type="math/tex">N→aB</script></span>，<span class="arithmatex"><span class="MathJax_Preview">N→ab</span><script type="math/tex">N→ab</script></span>。</p>
-</blockquote>
-<p>（Ⅲ）一个非终结符 <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span>，称之为开始符号。开始符号 定义的 终结符串集 就是文法定义的语言。</p>
-<p>（Ⅳ）一个非空有限集合 <span class="arithmatex"><span class="MathJax_Preview">P</span><script type="math/tex">P</script></span>，其中每个元素是一个产生式。</p>
-<blockquote>
-<p>一个产生式的形式是 <span class="arithmatex"><span class="MathJax_Preview">A→\alpha</span><script type="math/tex">A→\alpha</script></span>，其中 <span class="arithmatex"><span class="MathJax_Preview">A\in V_N</span><script type="math/tex">A\in V_N</script></span>，即非终结符；<span class="arithmatex"><span class="MathJax_Preview">\alpha\in (V_T\cup V_N)^*</span><script type="math/tex">\alpha\in (V_T\cup V_N)^*</script></span>。</p>
-</blockquote>
-<h2 id="_2">示例</h2>
-<p>看一个 <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span> 的例子：<span class="arithmatex"><span class="MathJax_Preview">(\{\textbf{id},+,*,-,(,)\},\{expr,op\},expr,P)</span><script type="math/tex">(\{\textbf{id},+,*,-,(,)\},\{expr,op\},expr,P)</script></span>，<span class="arithmatex"><span class="MathJax_Preview">P</span><script type="math/tex">P</script></span> 由如下产生式组成：</p>
+<p><strong>LL(1) 文法</strong>的意思是：【从左向右的扫描输入串】【产生最左推导】【每次查看下一个符号就可以做决策】</p>
+<p>如果要避免回溯，应当做到的场景就是：面对一个非终结符，如果指派了某个选择，那么这个选择绝不是虚假的。也就是说，如果选这个选择不能完成匹配，当时选其他的选择肯定也不能完成匹配。</p>
+<p>要避免回溯，前提条件就是要对文法消除左递归，已经介绍过。</p>
+<h2 id="_1">分析预定义</h2>
+<h3 id="_2">开始符号集</h3>
 <ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">expr→expr\quad op\quad expr</span><script type="math/tex">expr→expr\quad op\quad expr</script></span></li>
-<li><span class="arithmatex"><span class="MathJax_Preview">expr→(expr)</span><script type="math/tex">expr→(expr)</script></span></li>
-<li><span class="arithmatex"><span class="MathJax_Preview">expr→-expr</span><script type="math/tex">expr→-expr</script></span></li>
-<li><span class="arithmatex"><span class="MathJax_Preview">expr→\textbf{id}</span><script type="math/tex">expr→\textbf{id}</script></span></li>
-<li><span class="arithmatex"><span class="MathJax_Preview">op→+</span><script type="math/tex">op→+</script></span></li>
-<li><span class="arithmatex"><span class="MathJax_Preview">op→*</span><script type="math/tex">op→*</script></span></li>
+<li>对于文法的某个句型 <span class="arithmatex"><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span>，其开始符号集合 <span class="arithmatex"><span class="MathJax_Preview">FIRST(\alpha)</span><script type="math/tex">FIRST(\alpha)</script></span> 是说，当这个句型经过若干次推导后，不以非终结符打头了，换言之是以某个终结符 <span class="arithmatex"><span class="MathJax_Preview">b</span><script type="math/tex">b</script></span> 打头的，那么这个终结符 <span class="arithmatex"><span class="MathJax_Preview">b\in FIRST(\alpha)</span><script type="math/tex">b\in FIRST(\alpha)</script></span>，后者就是由所有这样的 <span class="arithmatex"><span class="MathJax_Preview">b</span><script type="math/tex">b</script></span> 组成的。</li>
 </ul>
-<p>上面这些产生式可以用 “|” 符号来合并：</p>
+<blockquote>
 <ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">expr→expr\quad or\quad expr|(expr)|-expr|\textbf{id}</span><script type="math/tex">expr→expr\quad or\quad expr|(expr)|-expr|\textbf{id}</script></span></li>
-<li><span class="arithmatex"><span class="MathJax_Preview">op→+|*</span><script type="math/tex">op→+|*</script></span></li>
+<li>特别，如果 <span class="arithmatex"><span class="MathJax_Preview">\alpha\Rightarrow^*\varepsilon</span><script type="math/tex">\alpha\Rightarrow^*\varepsilon</script></span>，则规定 <span class="arithmatex"><span class="MathJax_Preview">\varepsilon\in FIRST(\alpha)</span><script type="math/tex">\varepsilon\in FIRST(\alpha)</script></span>；</li>
+<li>如果对于 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 的任何两个选择 <span class="arithmatex"><span class="MathJax_Preview">\alpha_i,\alpha_j</span><script type="math/tex">\alpha_i,\alpha_j</script></span>，其开始符号集合都不相交，那么每次看到一个终结符 <span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span>（每次 getToken）都可以做一定正确的选择，这个选择就是满足 <span class="arithmatex"><span class="MathJax_Preview">a\in FIRST(\alpha)</span><script type="math/tex">a\in FIRST(\alpha)</script></span> 的那个 <span class="arithmatex"><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span>。</li>
+<li>用<strong>提左因子</strong>的办法，可以把所有可能导致开始符号集合相交的那些选择合并为一个选择，直到他们分道扬镳。</li>
 </ul>
-<h2 id="_3">推导</h2>
-<p>推导的意思是一个非终结符可以根据某个产生式（看成重写规则）来替代，如
-$$
-expr\Rightarrow expr\quad op\quad expr\Rightarrow expr+expr\Rightarrow\textbf{id}+expr\Rightarrow\textbf{id}+\textbf{id}
-$$
-也可以看成逐渐替换成<strong>实例</strong>。</p>
-<h2 id="_4">其他定义</h2>
-<table>
-<thead>
-<tr>
-<th>TERM</th>
-<th>EXPLANATION</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span class="arithmatex"><span class="MathJax_Preview">\Rightarrow^*</span><script type="math/tex">\Rightarrow^*</script></span></td>
-<td>零步或多步推导</td>
-</tr>
-<tr>
-<td><span class="arithmatex"><span class="MathJax_Preview">\Rightarrow^+</span><script type="math/tex">\Rightarrow^+</script></span></td>
-<td>一步或多步推导</td>
-</tr>
-<tr>
-<td>上下文无关语言</td>
-<td>上下文无关文法产生的语言</td>
-</tr>
-<tr>
-<td>句型</td>
-<td><span class="arithmatex"><span class="MathJax_Preview">S\Rightarrow^* \alpha</span><script type="math/tex">S\Rightarrow^* \alpha</script></span>，则称 <span class="arithmatex"><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> 是 <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span> 的句型</td>
-</tr>
-<tr>
-<td>句子</td>
-<td>若上面的 <span class="arithmatex"><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> 不含非终结符，则称之为句子</td>
-</tr>
-<tr>
-<td><span class="arithmatex"><span class="MathJax_Preview">\Rightarrow_{lm}</span><script type="math/tex">\Rightarrow_{lm}</script></span></td>
-<td>最左推导，即每次都代换句型最左边的非终结符的推导（上面推到的示例就不是最左推导）</td>
-</tr>
-</tbody>
-</table>
+</blockquote>
+<h4 id="_3">算法</h4>
+<p>（Ⅰ）计算 <span class="arithmatex"><span class="MathJax_Preview">FIRST(X)</span><script type="math/tex">FIRST(X)</script></span>，<span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 是某个终结符或非终结符</p>
+<p>如果 <span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 是某个终结符，则 <span class="arithmatex"><span class="MathJax_Preview">FIRST(X)=\{X\}</span><script type="math/tex">FIRST(X)=\{X\}</script></span></p>
+<p>如果 <span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 是某个非终结符，遍历所有其产生式 <span class="arithmatex"><span class="MathJax_Preview">X→Y_1Y_2...Y_k</span><script type="math/tex">X→Y_1Y_2...Y_k</script></span>，递归计算每一个产生式中的每一个 <span class="arithmatex"><span class="MathJax_Preview">FIRST(Y_i)</span><script type="math/tex">FIRST(Y_i)</script></span>，这很容易做到</p>
+<ul>
+<li>要么全空（<span class="arithmatex"><span class="MathJax_Preview">FIRST(X)=FIRST(X)\cup\varepsilon</span><script type="math/tex">FIRST(X)=FIRST(X)\cup\varepsilon</script></span>）</li>
+<li>要么出现了某个满足条件的非终结符 <span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span>（<span class="arithmatex"><span class="MathJax_Preview">FIRST(X)=FIRST(X)\cup a</span><script type="math/tex">FIRST(X)=FIRST(X)\cup a</script></span>）</li>
+</ul>
+<p>如果 <span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 是某个非终结符，且某个产生式是 <span class="arithmatex"><span class="MathJax_Preview">X→\varepsilon</span><script type="math/tex">X→\varepsilon</script></span>，则直接 <span class="arithmatex"><span class="MathJax_Preview">FIRST(X)=FIRST(X)\cup\varepsilon</span><script type="math/tex">FIRST(X)=FIRST(X)\cup\varepsilon</script></span>。</p>
+<p>（Ⅱ）计算 <span class="arithmatex"><span class="MathJax_Preview">FIRST(X_1...X_n)</span><script type="math/tex">FIRST(X_1...X_n)</script></span>，其中每个 <span class="arithmatex"><span class="MathJax_Preview">X_i</span><script type="math/tex">X_i</script></span> 都是某个终结符或非终结符，结果按下面的来走：</p>
+<ul>
+<li><span class="arithmatex"><span class="MathJax_Preview">FIRST(X_1)</span><script type="math/tex">FIRST(X_1)</script></span> 中的所有非 <span class="arithmatex"><span class="MathJax_Preview">\varepsilon</span><script type="math/tex">\varepsilon</script></span> 符号</li>
+<li>如果 <span class="arithmatex"><span class="MathJax_Preview">\varepsilon</span><script type="math/tex">\varepsilon</script></span> 在 <span class="arithmatex"><span class="MathJax_Preview">FIRST(X_1),...,FIRST(X_i)</span><script type="math/tex">FIRST(X_1),...,FIRST(X_i)</script></span> 中，那么应当把上面的下标 1 改成 <span class="arithmatex"><span class="MathJax_Preview">i+1</span><script type="math/tex">i+1</script></span></li>
+<li>如果所有的 <span class="arithmatex"><span class="MathJax_Preview">FIRST(X_i)</span><script type="math/tex">FIRST(X_i)</script></span> 都只有 <span class="arithmatex"><span class="MathJax_Preview">\varepsilon</span><script type="math/tex">\varepsilon</script></span>，最终的结果也只有它。</li>
+</ul>
+<h3 id="_4">后继符号集</h3>
+<ul>
+<li>如果 <span class="arithmatex"><span class="MathJax_Preview">\varepsilon\in FIRST(\alpha)</span><script type="math/tex">\varepsilon\in FIRST(\alpha)</script></span>，这里 <span class="arithmatex"><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> 是非终结符 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 的某个选择，说明还需要考虑 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 之后的符号。</li>
+<li>定义 <span class="arithmatex"><span class="MathJax_Preview">FOLLOW(A)</span><script type="math/tex">FOLLOW(A)</script></span> 是，从开始符号开始推导，所有可以出现在非终结符 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 之后的终结符 <span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span> 的集合。</li>
+</ul>
+<blockquote>
+<ul>
+<li>如果记输入结束标志是 <span class="arithmatex"><span class="MathJax_Preview">\$</span><script type="math/tex">\$</script></span>，且 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 是某个句型最右边的符号，那么规定 <span class="arithmatex"><span class="MathJax_Preview">\$\in FOLLOW(A)</span><script type="math/tex">\$\in FOLLOW(A)</script></span>。</li>
+</ul>
+</blockquote>
+<h4 id="_5">算法</h4>
+<p>计算 <span class="arithmatex"><span class="MathJax_Preview">FOLLOW(A)</span><script type="math/tex">FOLLOW(A)</script></span>，<span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 是某个非终结符</p>
+<p>？</p>
+<blockquote>
+<ul>
+<li>把 <span class="arithmatex"><span class="MathJax_Preview">\$</span><script type="math/tex">\$</script></span> 加入 <span class="arithmatex"><span class="MathJax_Preview">FOLLOW(S)</span><script type="math/tex">FOLLOW(S)</script></span> 中</li>
+<li>如果 <span class="arithmatex"><span class="MathJax_Preview">A→...B\beta</span><script type="math/tex">A→...B\beta</script></span>，则将 <span class="arithmatex"><span class="MathJax_Preview">FIRST(\beta)</span><script type="math/tex">FIRST(\beta)</script></span> 加入到 <span class="arithmatex"><span class="MathJax_Preview">FOLLOW(B)</span><script type="math/tex">FOLLOW(B)</script></span></li>
+<li>如果 <span class="arithmatex"><span class="MathJax_Preview">A→...B</span><script type="math/tex">A→...B</script></span> 或者 <span class="arithmatex"><span class="MathJax_Preview">A→...B\beta</span><script type="math/tex">A→...B\beta</script></span>，<span class="arithmatex"><span class="MathJax_Preview">\varepsilon \in FIRST(\beta)</span><script type="math/tex">\varepsilon \in FIRST(\beta)</script></span>，则</li>
+</ul>
+</blockquote>
 
 
 
@@ -648,7 +679,7 @@ $$
     <nav class="md-footer__inner md-grid" aria-label="页脚" >
       
         
-        <a href="../../1%20%E7%9B%B8%E5%85%B3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/4%20%E6%9E%81%E5%B0%8F%E5%8C%96DFA/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 4 极小化DFA" rel="prev">
+        <a href="../1%20%E4%B8%80%E8%88%AC%E6%96%B9%E6%B3%95/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 1 一般方法" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -657,26 +688,11 @@ $$
               <span class="md-footer__direction">
                 上一页
               </span>
-              4 极小化DFA
+              1 一般方法
             </div>
           </div>
         </a>
       
-      
-        
-        <a href="../2%20%E4%BA%8C%E4%B9%89%E6%80%A7/" class="md-footer__link md-footer__link--next" aria-label="下一页: 2 二义性" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                下一页
-              </span>
-              2 二义性
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
       
     </nav>
   
