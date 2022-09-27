@@ -61,6 +61,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -316,9 +321,59 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          1 上下文无关文法的定义
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         1 上下文无关文法的定义
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    定义
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    示例
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    推导
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    其他定义
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -349,6 +404,42 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    定义
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    示例
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    推导
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    其他定义
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -365,6 +456,7 @@
   <h1>1 上下文无关文法的定义</h1>
 
 <p>文法，可以理解成某一类东西的产生规则。</p>
+<h2 id="_1">定义</h2>
 <p>一个上下文无关文法 <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span> 是一个四元组，其包含：</p>
 <p>（Ⅰ）一个非空有限集合 <span class="arithmatex"><span class="MathJax_Preview">V_T</span><script type="math/tex">V_T</script></span>，称之为终结符（记号名）的集合。</p>
 <p>（Ⅱ）一个非空有限集合 <span class="arithmatex"><span class="MathJax_Preview">V_N</span><script type="math/tex">V_N</script></span>，称之为非终结符的集合。</p>
@@ -376,6 +468,62 @@
 <blockquote>
 <p>一个产生式的形式是 <span class="arithmatex"><span class="MathJax_Preview">A→\alpha</span><script type="math/tex">A→\alpha</script></span>，其中 <span class="arithmatex"><span class="MathJax_Preview">A\in V_N</span><script type="math/tex">A\in V_N</script></span>，即非终结符；<span class="arithmatex"><span class="MathJax_Preview">\alpha\in (V_T\cup V_N)^*</span><script type="math/tex">\alpha\in (V_T\cup V_N)^*</script></span>。</p>
 </blockquote>
+<h2 id="_2">示例</h2>
+<p>看一个 <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span> 的例子：<span class="arithmatex"><span class="MathJax_Preview">(\{\textbf{id},+,*,-,(,)\},\{expr,op\},expr,P)</span><script type="math/tex">(\{\textbf{id},+,*,-,(,)\},\{expr,op\},expr,P)</script></span>，<span class="arithmatex"><span class="MathJax_Preview">P</span><script type="math/tex">P</script></span> 由如下产生式组成：</p>
+<ul>
+<li><span class="arithmatex"><span class="MathJax_Preview">expr→expr\quad op\quad expr</span><script type="math/tex">expr→expr\quad op\quad expr</script></span></li>
+<li><span class="arithmatex"><span class="MathJax_Preview">expr→(expr)</span><script type="math/tex">expr→(expr)</script></span></li>
+<li><span class="arithmatex"><span class="MathJax_Preview">expr→-expr</span><script type="math/tex">expr→-expr</script></span></li>
+<li><span class="arithmatex"><span class="MathJax_Preview">expr→\textbf{id}</span><script type="math/tex">expr→\textbf{id}</script></span></li>
+<li><span class="arithmatex"><span class="MathJax_Preview">op→+</span><script type="math/tex">op→+</script></span></li>
+<li><span class="arithmatex"><span class="MathJax_Preview">op→*</span><script type="math/tex">op→*</script></span></li>
+</ul>
+<p>上面这些产生式可以用 “|” 符号来合并：</p>
+<ul>
+<li><span class="arithmatex"><span class="MathJax_Preview">expr→expr\quad or\quad expr|(expr)|-expr|\textbf{id}</span><script type="math/tex">expr→expr\quad or\quad expr|(expr)|-expr|\textbf{id}</script></span></li>
+<li><span class="arithmatex"><span class="MathJax_Preview">op→+|*</span><script type="math/tex">op→+|*</script></span></li>
+</ul>
+<h2 id="_3">推导</h2>
+<p>推导的意思是一个非终结符可以根据某个产生式（看成重写规则）来替代，如
+$$
+expr\Rightarrow expr\quad op\quad expr\Rightarrow expr+expr\Rightarrow\textbf{id}+expr\Rightarrow\textbf{id}+\textbf{id}
+$$
+也可以看成逐渐替换成<strong>实例</strong>。</p>
+<h2 id="_4">其他定义</h2>
+<table>
+<thead>
+<tr>
+<th>TERM</th>
+<th>EXPLANATION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex"><span class="MathJax_Preview">\Rightarrow^*</span><script type="math/tex">\Rightarrow^*</script></span></td>
+<td>零步或多步推导</td>
+</tr>
+<tr>
+<td><span class="arithmatex"><span class="MathJax_Preview">\Rightarrow^+</span><script type="math/tex">\Rightarrow^+</script></span></td>
+<td>一步或多步推导</td>
+</tr>
+<tr>
+<td>上下文无关语言</td>
+<td>上下文无关文法产生的语言</td>
+</tr>
+<tr>
+<td>句型</td>
+<td><span class="arithmatex"><span class="MathJax_Preview">S\Rightarrow^* \alpha</span><script type="math/tex">S\Rightarrow^* \alpha</script></span>，则称 <span class="arithmatex"><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> 是 <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span> 的句型</td>
+</tr>
+<tr>
+<td>句子</td>
+<td>若上面的 <span class="arithmatex"><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> 不含非终结符，则称之为句子</td>
+</tr>
+<tr>
+<td><span class="arithmatex"><span class="MathJax_Preview">\Rightarrow_{lm}</span><script type="math/tex">\Rightarrow_{lm}</script></span></td>
+<td>最左推导，即每次都代换句型最左边的非终结符的推导（上面推到的示例就不是最左推导）</td>
+</tr>
+</tbody>
+</table>
 
 
 
