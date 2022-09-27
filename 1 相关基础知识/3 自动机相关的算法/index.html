@@ -286,6 +286,19 @@
     NFA 转 DFA
   </a>
   
+    <nav class="md-nav" aria-label="NFA 转 DFA">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    例题
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -332,6 +345,19 @@
     NFA 转 DFA
   </a>
   
+    <nav class="md-nav" aria-label="NFA 转 DFA">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    例题
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -374,14 +400,57 @@ $$
 &amp;\quad\quad\quad\quad\quad\quad D_S=D_S\cup U;\newline
 \end{aligned}
 $$</p>
-<pre><code class="language-mermaid">stateDiagram-v2
-X --&gt; 1: ε
-1 --&gt; 2: ε
-1 --&gt; 1: a
-1 --&gt; 1: b
-2 --&gt; 3: b
-3 --&gt; Y: a
-</code></pre>
+<h3 id="_1">例题</h3>
+<p>假设有如下的转换图：</p>
+<p><img alt="image-20220927210034140" src="../3%20%E8%87%AA%E5%8A%A8%E6%9C%BA%E7%9B%B8%E5%85%B3%E7%9A%84%E7%AE%97%E6%B3%95.assets/image-20220927210034140.png" /></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 是开始状态，按算法步骤来一步一步走</p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> in <span class="arithmatex"><span class="MathJax_Preview">D_S</span><script type="math/tex">D_S</script></span></th>
+<th><span class="arithmatex"><span class="MathJax_Preview">m(S,a)</span><script type="math/tex">m(S,a)</script></span></th>
+<th><span class="arithmatex"><span class="MathJax_Preview">c(m(S,a))</span><script type="math/tex">c(m(S,a))</script></span></th>
+<th><span class="arithmatex"><span class="MathJax_Preview">m(S,b)</span><script type="math/tex">m(S,b)</script></span></th>
+<th><span class="arithmatex"><span class="MathJax_Preview">c(m(S,b))</span><script type="math/tex">c(m(S,b))</script></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex"><span class="MathJax_Preview">A:\{X,1,2\}</span><script type="math/tex">A:\{X,1,2\}</script></span></td>
+<td>{1}</td>
+<td><span class="arithmatex"><span class="MathJax_Preview">B:\{1,2\}</span><script type="math/tex">B:\{1,2\}</script></span></td>
+<td>{1, 3}</td>
+<td><span class="arithmatex"><span class="MathJax_Preview">C:\{1,2,3\}</span><script type="math/tex">C:\{1,2,3\}</script></span></td>
+</tr>
+<tr>
+<td><span class="arithmatex"><span class="MathJax_Preview">B:\{1,2\}</span><script type="math/tex">B:\{1,2\}</script></span></td>
+<td>{1}</td>
+<td><span class="arithmatex"><span class="MathJax_Preview">B</span><script type="math/tex">B</script></span></td>
+<td>{1, 3}</td>
+<td><span class="arithmatex"><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span></td>
+</tr>
+<tr>
+<td><span class="arithmatex"><span class="MathJax_Preview">C:\{1,2,3\}</span><script type="math/tex">C:\{1,2,3\}</script></span></td>
+<td>{1, Y}</td>
+<td><span class="arithmatex"><span class="MathJax_Preview">D:\{1,2,Y\}</span><script type="math/tex">D:\{1,2,Y\}</script></span></td>
+<td>{1, 3}</td>
+<td><span class="arithmatex"><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span></td>
+</tr>
+<tr>
+<td><span class="arithmatex"><span class="MathJax_Preview">D:\{1,2,Y\}</span><script type="math/tex">D:\{1,2,Y\}</script></span></td>
+<td>{1}</td>
+<td><span class="arithmatex"><span class="MathJax_Preview">B</span><script type="math/tex">B</script></span></td>
+<td>{1, 3}</td>
+<td><span class="arithmatex"><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span></td>
+</tr>
+</tbody>
+</table>
+<p>非常容易出错，出错的点在于：</p>
+<ul>
+<li><span class="arithmatex"><span class="MathJax_Preview">m(S,a)</span><script type="math/tex">m(S,a)</script></span> 表示从 <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> 的状态出发，能够到达的状态集合，而非有 <span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span> 出边的 <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> 状态集合。</li>
+<li>在计算 <span class="arithmatex"><span class="MathJax_Preview">c(T)</span><script type="math/tex">c(T)</script></span> 时，一个状态自身也可以通过 <span class="arithmatex"><span class="MathJax_Preview">\varepsilon</span><script type="math/tex">\varepsilon</script></span> 转换到自身，所以总是有 <span class="arithmatex"><span class="MathJax_Preview">m(S,a)\subseteq c(m(S,a))</span><script type="math/tex">m(S,a)\subseteq c(m(S,a))</script></span>。</li>
+</ul>
+<p>根据上面得到的表，就可以确定得出的 DFA 了。</p>
 
 
 

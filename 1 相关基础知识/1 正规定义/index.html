@@ -477,16 +477,26 @@
 <p>一个正规式 <span class="arithmatex"><span class="MathJax_Preview">r</span><script type="math/tex">r</script></span> 表示一个语言 <span class="arithmatex"><span class="MathJax_Preview">L(r)</span><script type="math/tex">L(r)</script></span>，规则如下。</p>
 <p>（Ⅰ）<span class="arithmatex"><span class="MathJax_Preview">\varepsilon</span><script type="math/tex">\varepsilon</script></span> 是正规式，表示语言 <span class="arithmatex"><span class="MathJax_Preview">\{\varepsilon\}</span><script type="math/tex">\{\varepsilon\}</script></span>；</p>
 <p>（Ⅱ）若 <span class="arithmatex"><span class="MathJax_Preview">a\in \Sigma</span><script type="math/tex">a\in \Sigma</script></span>，则 <span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span> 是正规式，表示语言 <span class="arithmatex"><span class="MathJax_Preview">\{a\}</span><script type="math/tex">\{a\}</script></span>；</p>
-<p>（Ⅲ）若 <span class="arithmatex"><span class="MathJax_Preview">r,s</span><script type="math/tex">r,s</script></span> 是正规式，则
-$$
+<p>（Ⅲ）若 <span class="arithmatex"><span class="MathJax_Preview">r,s</span><script type="math/tex">r,s</script></span> 是正规式，则</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
 \begin{aligned}
 (r)|(s)&amp;→L(r)|L(s)\newline
 (r)(s)&amp;→L(r)L(s)\newline
-(r)^<em>&amp;→(L(r))^</em>\newline
+(r)^*&amp;→(L(r))^*\newline
 (r)&amp;→L(r)
 \end{aligned}
-$$
-正规式表示的语言叫正规语言（正规集）。</p>
+</div>
+<script type="math/tex; mode=display">
+\begin{aligned}
+(r)|(s)&→L(r)|L(s)\newline
+(r)(s)&→L(r)L(s)\newline
+(r)^*&→(L(r))^*\newline
+(r)&→L(r)
+\end{aligned}
+</script>
+</div>
+<p>正规式表示的语言叫正规语言（正规集）。</p>
 <p>如果规定一些运算优先级和结合性，则可以省去一些正规式中不必要的括号。</p>
 <h2 id="_5">正规定义</h2>
 <p>正规定义形式：
