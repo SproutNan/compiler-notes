@@ -13,7 +13,7 @@
     
     
       
-        <title>3 自动机相关的算法 - Compiler Notes</title>
+        <title>4 极小化DFA - Compiler Notes</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#nfa-dfa" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              3 自动机相关的算法
+              4 极小化DFA
             
           </span>
         </div>
@@ -250,6 +250,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../3%20NFA%E8%BD%ACDFA/" class="md-nav__link">
+        3 NFA转DFA
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -260,12 +274,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          3 自动机相关的算法
+          4 极小化DFA
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        3 自动机相关的算法
+        4 极小化DFA
       </a>
       
         
@@ -282,22 +296,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#nfa-dfa" class="md-nav__link">
-    NFA 转 DFA
-  </a>
-  
-    <nav class="md-nav" aria-label="NFA 转 DFA">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    例题
+    例子
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -341,22 +342,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#nfa-dfa" class="md-nav__link">
-    NFA 转 DFA
-  </a>
-  
-    <nav class="md-nav" aria-label="NFA 转 DFA">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    例题
+    例子
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -375,82 +363,42 @@
                   
 
 
-  <h1>3 自动机相关的算法</h1>
+  <h1>4 极小化DFA</h1>
 
-<h2 id="nfa-dfa">NFA 转 DFA</h2>
-<p>问题：用计算机很难在 NFA 上跑模拟看串 <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> 是否会被接受（需要回溯）。</p>
-<p><strong>子集构造法</strong>可以将一个 NFA 转换成 DFA。</p>
-<p>首先需要给出一些函数方便下面使用：</p>
-<ol>
-<li><span class="arithmatex"><span class="MathJax_Preview">\varepsilon\text{-closure}(s):=c(s)</span><script type="math/tex">\varepsilon\text{-closure}(s):=c(s)</script></span>，从状态 <span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span> 出发，只用 <span class="arithmatex"><span class="MathJax_Preview">\varepsilon</span><script type="math/tex">\varepsilon</script></span> 转换能达到的<strong>状态集合</strong>。</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\varepsilon\text{-closure}(T):=c(T)=\cup_{s\in T}c(s)</span><script type="math/tex">\varepsilon\text{-closure}(T):=c(T)=\cup_{s\in T}c(s)</script></span>，相当于从一个状态集合能达到的所有状态集合的并。</li>
-<li><span class="arithmatex"><span class="MathJax_Preview">\text{move}(T,a):=m(T,a)=\cup_{s\in T} m(s,a)</span><script type="math/tex">\text{move}(T,a):=m(T,a)=\cup_{s\in T} m(s,a)</script></span>，把 <span class="arithmatex"><span class="MathJax_Preview">\text{move}(s,a)</span><script type="math/tex">\text{move}(s,a)</script></span> 拓展成 <span class="arithmatex"><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span> 的多态函数。</li>
-</ol>
-<p>输入的 NFA 所有可能的输入字母表记为 <span class="arithmatex"><span class="MathJax_Preview">\Sigma</span><script type="math/tex">\Sigma</script></span>；</p>
-<p>输出的 DFA 的状态集合记为 <span class="arithmatex"><span class="MathJax_Preview">D_S</span><script type="math/tex">D_S</script></span>，对应的转换表记为 <span class="arithmatex"><span class="MathJax_Preview">D_T</span><script type="math/tex">D_T</script></span>。</p>
-<p><strong>初始状态</strong>：<span class="arithmatex"><span class="MathJax_Preview">D_S=\{c(s_0)\}</span><script type="math/tex">D_S=\{c(s_0)\}</script></span>，<span class="arithmatex"><span class="MathJax_Preview">s_0</span><script type="math/tex">s_0</script></span> 是 NFA 的开始状态，并且尚未标记（在这里，标记以 <span class="arithmatex"><span class="MathJax_Preview">^*</span><script type="math/tex">^*</script></span> 记）
-$$
-\begin{aligned}
-&amp;\textbf{while }(D_S\text{有未被标记的状态}T):\newline
-&amp;\quad\quad T=T^*;\newline
-&amp;\quad\quad \textbf{for }(\text{符号}a\text{ : }\Sigma):\newline
-&amp;\quad\quad\quad\quad U=c(m(T,a));\newline
-&amp;\quad\quad\quad\quad D_T[T,a]=U;\newline
-&amp;\quad\quad\quad\quad \textbf{if }(U\not\in D_S):\newline
-&amp;\quad\quad\quad\quad\quad\quad D_S=D_S\cup U;\newline
-\end{aligned}
-$$</p>
-<h3 id="_1">例题</h3>
-<p>假设有如下的转换图：</p>
-<p><img alt="image-20220927210034140" src="../3%20%E8%87%AA%E5%8A%A8%E6%9C%BA%E7%9B%B8%E5%85%B3%E7%9A%84%E7%AE%97%E6%B3%95.assets/image-20220927210034140.png" /></p>
-<p><span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 是开始状态，按算法步骤来一步一步走</p>
-<table>
-<thead>
-<tr>
-<th><span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> in <span class="arithmatex"><span class="MathJax_Preview">D_S</span><script type="math/tex">D_S</script></span></th>
-<th><span class="arithmatex"><span class="MathJax_Preview">m(S,a)</span><script type="math/tex">m(S,a)</script></span></th>
-<th><span class="arithmatex"><span class="MathJax_Preview">c(m(S,a))</span><script type="math/tex">c(m(S,a))</script></span></th>
-<th><span class="arithmatex"><span class="MathJax_Preview">m(S,b)</span><script type="math/tex">m(S,b)</script></span></th>
-<th><span class="arithmatex"><span class="MathJax_Preview">c(m(S,b))</span><script type="math/tex">c(m(S,b))</script></span></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span class="arithmatex"><span class="MathJax_Preview">A:\{X,1,2\}</span><script type="math/tex">A:\{X,1,2\}</script></span></td>
-<td>{1}</td>
-<td><span class="arithmatex"><span class="MathJax_Preview">B:\{1,2\}</span><script type="math/tex">B:\{1,2\}</script></span></td>
-<td>{1, 3}</td>
-<td><span class="arithmatex"><span class="MathJax_Preview">C:\{1,2,3\}</span><script type="math/tex">C:\{1,2,3\}</script></span></td>
-</tr>
-<tr>
-<td><span class="arithmatex"><span class="MathJax_Preview">B:\{1,2\}</span><script type="math/tex">B:\{1,2\}</script></span></td>
-<td>{1}</td>
-<td><span class="arithmatex"><span class="MathJax_Preview">B</span><script type="math/tex">B</script></span></td>
-<td>{1, 3}</td>
-<td><span class="arithmatex"><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span></td>
-</tr>
-<tr>
-<td><span class="arithmatex"><span class="MathJax_Preview">C:\{1,2,3\}</span><script type="math/tex">C:\{1,2,3\}</script></span></td>
-<td>{1, Y}</td>
-<td><span class="arithmatex"><span class="MathJax_Preview">D:\{1,2,Y\}</span><script type="math/tex">D:\{1,2,Y\}</script></span></td>
-<td>{1, 3}</td>
-<td><span class="arithmatex"><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span></td>
-</tr>
-<tr>
-<td><span class="arithmatex"><span class="MathJax_Preview">D:\{1,2,Y\}</span><script type="math/tex">D:\{1,2,Y\}</script></span></td>
-<td>{1}</td>
-<td><span class="arithmatex"><span class="MathJax_Preview">B</span><script type="math/tex">B</script></span></td>
-<td>{1, 3}</td>
-<td><span class="arithmatex"><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span></td>
-</tr>
-</tbody>
-</table>
-<p>非常容易出错，出错的点在于：</p>
+<p><strong>问题</strong>：用子集构造法得出的 DFA <strong>不一定</strong>是状态数最少的 DFA。</p>
+<p>在运行下面介绍的 DFA 极小化算法之前，需要检查转换函数是不是全函数，即：需要看每个状态 <span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span> 是不是对每个可能的输入字符 <span class="arithmatex"><span class="MathJax_Preview">a_i</span><script type="math/tex">a_i</script></span> 都有 <span class="arithmatex"><span class="MathJax_Preview">a_i</span><script type="math/tex">a_i</script></span>-出边。</p>
+<p>如果不是的话，需要添加一个死状态 <span class="arithmatex"><span class="MathJax_Preview">s_d</span><script type="math/tex">s_d</script></span>，满足：</p>
 <ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">m(S,a)</span><script type="math/tex">m(S,a)</script></span> 表示从 <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> 的状态出发，能够到达的状态集合，而非有 <span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span> 出边的 <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> 状态集合。</li>
-<li>在计算 <span class="arithmatex"><span class="MathJax_Preview">c(T)</span><script type="math/tex">c(T)</script></span> 时，一个状态自身也可以通过 <span class="arithmatex"><span class="MathJax_Preview">\varepsilon</span><script type="math/tex">\varepsilon</script></span> 转换到自身，所以总是有 <span class="arithmatex"><span class="MathJax_Preview">m(S,a)\subseteq c(m(S,a))</span><script type="math/tex">m(S,a)\subseteq c(m(S,a))</script></span>。</li>
+<li><span class="arithmatex"><span class="MathJax_Preview">s_d</span><script type="math/tex">s_d</script></span> 对所有可能的输入字符都转换到其本身；</li>
+<li>如果某个已存在的状态 <span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span>，其对某个可能的输入字符 <span class="arithmatex"><span class="MathJax_Preview">a_i</span><script type="math/tex">a_i</script></span> 没有 <span class="arithmatex"><span class="MathJax_Preview">a_i</span><script type="math/tex">a_i</script></span>-出边，则将状态 <span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span> 的 <span class="arithmatex"><span class="MathJax_Preview">a_i</span><script type="math/tex">a_i</script></span>-出边指向 <span class="arithmatex"><span class="MathJax_Preview">s_d</span><script type="math/tex">s_d</script></span>。</li>
 </ul>
-<p>根据上面得到的表，就可以确定得出的 DFA 了。</p>
+<p>这个算法需要考察的是，各个状态对所有的可能的输入字符是否去向都相同（术语名之曰“不可区分”）。</p>
+<blockquote>
+<p>这个算法运行起来实际上很简单，但是书上的形式化表述非常的晦涩，感觉可能算法配例子会比较好理解？</p>
+<p>这里就不贴书上的形式化表述了。</p>
+</blockquote>
+<h3 id="_1">例子</h3>
+<p>这里以 HW3-1 的 NFA 转 DFA 结果为例，在那个结果中，接受状态集合是 <span class="arithmatex"><span class="MathJax_Preview">\{E,F,G,H,I\}</span><script type="math/tex">\{E,F,G,H,I\}</script></span>，非接受状态集合是 <span class="arithmatex"><span class="MathJax_Preview">\{A,B,C,D\}</span><script type="math/tex">\{A,B,C,D\}</script></span>。</p>
+<p>转换表如下：</p>
+<p><img alt="image-20220927213447399" src="../4%20%E6%9E%81%E5%B0%8F%E5%8C%96DFA.assets/image-20220927213447399.png" /></p>
+<p>可以看到这里 A 与 C 不可区分，E、G 和 I 不可区分，将其合并，任选一个作为原来的替代，这里 <span class="arithmatex"><span class="MathJax_Preview">A, C := A</span><script type="math/tex">A, C := A</script></span>，<span class="arithmatex"><span class="MathJax_Preview">E,G,I:=E</span><script type="math/tex">E,G,I:=E</script></span>。</p>
+<p>现在转换表成了：</p>
+<p><img alt="image-20220927213635754" src="../4%20%E6%9E%81%E5%B0%8F%E5%8C%96DFA.assets/image-20220927213635754.png" /></p>
+<p>可以看到这里 E 和 H 不可区分，将其合并，任选一个作为原来的替代，<span class="arithmatex"><span class="MathJax_Preview">E,H:=E</span><script type="math/tex">E,H:=E</script></span>。</p>
+<p>现在转换表成了：</p>
+<p><img alt="image-20220927213722465" src="../4%20%E6%9E%81%E5%B0%8F%E5%8C%96DFA.assets/image-20220927213722465.png" /></p>
+<p>类似地，最后合并一次：</p>
+<p><img alt="image-20220927213743009" src="../4%20%E6%9E%81%E5%B0%8F%E5%8C%96DFA.assets/image-20220927213743009.png" /></p>
+<p>这里全都是可区分的，算法结束。</p>
+<blockquote>
+<p>注意，上面的示例本身就是全函数，没有添加死状态。如果添加了死状态，要按照书上的要求：</p>
+<ul>
+<li>如果结果 DFA 有死状态，则去掉。</li>
+<li>从开始状态不可达的状态要删除。</li>
+<li>从任何其他状态到死状态的转换都改成 undefined。</li>
+</ul>
+<p>如果开始不是全函数，又不添加死状态，会导致新 DFA 与旧 DFA 接受不同语言。</p>
+</blockquote>
 
 
 
@@ -471,7 +419,7 @@ $$</p>
     <nav class="md-footer__inner md-grid" aria-label="页脚" >
       
         
-        <a href="../2%20%E8%87%AA%E5%8A%A8%E6%9C%BA/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 2 自动机" rel="prev">
+        <a href="../3%20NFA%E8%BD%ACDFA/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 3 NFA转DFA" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -480,7 +428,7 @@ $$</p>
               <span class="md-footer__direction">
                 上一页
               </span>
-              2 自动机
+              3 NFA转DFA
             </div>
           </div>
         </a>
