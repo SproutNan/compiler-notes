@@ -8,19 +8,19 @@
       
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.3">
     
     
       
-        <title>Compiler Notes</title>
+        <title>3 消除左递归 - Compiler Notes</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.7a952b86.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7a952b86.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.cbb835fc.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
         
       
       
@@ -37,7 +37,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#homepage" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -76,7 +76,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="." title="Compiler Notes" class="md-header__button md-logo" aria-label="Compiler Notes" data-md-component="logo">
+    <a href="../.." title="Compiler Notes" class="md-header__button md-logo" aria-label="Compiler Notes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -95,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Homepage
+              3 消除左递归
             
           </span>
         </div>
@@ -162,7 +162,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Compiler Notes" class="md-nav__button md-logo" aria-label="Compiler Notes" data-md-component="logo">
+    <a href="../.." title="Compiler Notes" class="md-nav__button md-logo" aria-label="Compiler Notes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -179,52 +179,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Homepage
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
         Homepage
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#usable-links" class="md-nav__link">
-    Usable links
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -263,7 +222,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1%20%E7%9B%B8%E5%85%B3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/1%20%E6%AD%A3%E8%A7%84%E5%AE%9A%E4%B9%89/" class="md-nav__link">
+      <a href="../../1%20%E7%9B%B8%E5%85%B3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/1%20%E6%AD%A3%E8%A7%84%E5%AE%9A%E4%B9%89/" class="md-nav__link">
         1 正规定义
       </a>
     </li>
@@ -277,7 +236,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1%20%E7%9B%B8%E5%85%B3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/2%20%E8%87%AA%E5%8A%A8%E6%9C%BA/" class="md-nav__link">
+      <a href="../../1%20%E7%9B%B8%E5%85%B3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/2%20%E8%87%AA%E5%8A%A8%E6%9C%BA/" class="md-nav__link">
         2 自动机
       </a>
     </li>
@@ -291,7 +250,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1%20%E7%9B%B8%E5%85%B3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/3%20NFA%E8%BD%ACDFA/" class="md-nav__link">
+      <a href="../../1%20%E7%9B%B8%E5%85%B3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/3%20NFA%E8%BD%ACDFA/" class="md-nav__link">
         3 NFA转DFA
       </a>
     </li>
@@ -305,7 +264,7 @@
   
   
     <li class="md-nav__item">
-      <a href="1%20%E7%9B%B8%E5%85%B3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/4%20%E6%9E%81%E5%B0%8F%E5%8C%96DFA/" class="md-nav__link">
+      <a href="../../1%20%E7%9B%B8%E5%85%B3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/4%20%E6%9E%81%E5%B0%8F%E5%8C%96DFA/" class="md-nav__link">
         4 极小化DFA
       </a>
     </li>
@@ -325,12 +284,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -353,7 +314,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2%20%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95/1%20%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95%E7%9A%84%E5%AE%9A%E4%B9%89/" class="md-nav__link">
+      <a href="../1%20%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95%E7%9A%84%E5%AE%9A%E4%B9%89/" class="md-nav__link">
         1 上下文无关文法的定义
       </a>
     </li>
@@ -367,7 +328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2%20%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95/2%20%E4%BA%8C%E4%B9%89%E6%80%A7/" class="md-nav__link">
+      <a href="../2%20%E4%BA%8C%E4%B9%89%E6%80%A7/" class="md-nav__link">
         2 二义性
       </a>
     </li>
@@ -379,11 +340,68 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="2%20%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95/3%20%E6%B6%88%E9%99%A4%E5%B7%A6%E9%80%92%E5%BD%92/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          3 消除左递归
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         3 消除左递归
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    消除左递归
+  </a>
+  
+    <nav class="md-nav" aria-label="消除左递归">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    间接左递归
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    隐藏左递归
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -395,7 +413,7 @@
   
   
     <li class="md-nav__item">
-      <a href="2%20%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95/4%20%E6%8F%90%E5%B7%A6%E5%9B%A0%E5%AD%90/" class="md-nav__link">
+      <a href="../4%20%E6%8F%90%E5%B7%A6%E5%9B%A0%E5%AD%90/" class="md-nav__link">
         4 提左因子
       </a>
     </li>
@@ -426,8 +444,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -436,9 +452,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#usable-links" class="md-nav__link">
-    Usable links
+  <a href="#_1" class="md-nav__link">
+    消除左递归
   </a>
+  
+    <nav class="md-nav" aria-label="消除左递归">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    间接左递归
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    隐藏左递归
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -457,14 +493,59 @@
                   
 
 
-<h1 id="homepage">Homepage</h1>
-<p>This is note site for my course: 011703.01.2022FA: 编译原理和技术(H)</p>
-<p>Writing notes is a way of learning and reviewing.</p>
-<p>You can just select chapter from left guidebar.</p>
-<h2 id="usable-links">Usable links</h2>
-<p><a href="https://www.educoder.net/classrooms/RWUON7QS/announcement">Educoder</a></p>
-<p><a href="https://git.lug.ustc.edu.cn/compiler/course">Gitlab</a></p>
-<p><a href="http://staff.ustc.edu.cn/~yuzhang/compiler/2022f/">Professor's index</a></p>
+  <h1>3 消除左递归</h1>
+
+<h2 id="_1">消除左递归</h2>
+<p>这里所说的<strong>左递归</strong>是指这样的产生式（<span class="arithmatex"><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> 是一个串）：
+$$
+A\Rightarrow^+A\alpha
+$$
+我们后面要用自根向下的分析方法，这样的产生式在构建分析树时会导致无限循环，所以要消除左递归。</p>
+<p>观察到左递归导致的串集可能是
+$$
+A\alpha\alpha\alpha\cdots
+$$
+形式的，我们的思路是把左递归改成<strong>右递归</strong>。假设原来的左递归产生式是</p>
+<ul>
+<li><span class="arithmatex"><span class="MathJax_Preview">A→A\alpha|\beta</span><script type="math/tex">A→A\alpha|\beta</script></span></li>
+</ul>
+<p>可以用相应的非左递归文法</p>
+<ul>
+<li><span class="arithmatex"><span class="MathJax_Preview">A→\beta A'</span><script type="math/tex">A→\beta A'</script></span></li>
+<li><span class="arithmatex"><span class="MathJax_Preview">A'→\alpha|A'|\varepsilon</span><script type="math/tex">A'→\alpha|A'|\varepsilon</script></span></li>
+</ul>
+<p>来替代。</p>
+<blockquote>
+<p>更一般地，产生式</p>
+<ul>
+<li><span class="arithmatex"><span class="MathJax_Preview">A→A\alpha_1|...|A\alpha_m|\beta_1|...|\beta_n</span><script type="math/tex">A→A\alpha_1|...|A\alpha_m|\beta_1|...|\beta_n</script></span></li>
+</ul>
+<p>可以用</p>
+<ul>
+<li><span class="arithmatex"><span class="MathJax_Preview">A→\beta_1A'|...|\beta_nA'</span><script type="math/tex">A→\beta_1A'|...|\beta_nA'</script></span></li>
+<li><span class="arithmatex"><span class="MathJax_Preview">A'→\alpha_1A'|...|\alpha_mA'|\varepsilon</span><script type="math/tex">A'→\alpha_1A'|...|\alpha_mA'|\varepsilon</script></span></li>
+</ul>
+<p>来替代。</p>
+<p>只要理解了左递归文法产生的句型结构，就不难写。</p>
+</blockquote>
+<h3 id="_2">间接左递归</h3>
+<p>如何消除两步或多步推导产生的左递归？</p>
+<ul>
+<li><span class="arithmatex"><span class="MathJax_Preview">S→Aa|b</span><script type="math/tex">S→Aa|b</script></span></li>
+<li><span class="arithmatex"><span class="MathJax_Preview">A→Sd|\varepsilon</span><script type="math/tex">A→Sd|\varepsilon</script></span></li>
+</ul>
+<p>这里 <span class="arithmatex"><span class="MathJax_Preview">S\Rightarrow Aa\Rightarrow Sda</span><script type="math/tex">S\Rightarrow Aa\Rightarrow Sda</script></span> 是左递归形式的，我们可以把多次推导直接带入到第二个产生式里，即第二个产生式变成</p>
+<ul>
+<li><span class="arithmatex"><span class="MathJax_Preview">A→Aad|bd|\varepsilon</span><script type="math/tex">A→Aad|bd|\varepsilon</script></span></li>
+</ul>
+<p>对这个式子消除直接的左递归即可。</p>
+<h3 id="_3">隐藏左递归</h3>
+<p>间接左递归的特例，如</p>
+<ul>
+<li><span class="arithmatex"><span class="MathJax_Preview">A→BAd</span><script type="math/tex">A→BAd</script></span></li>
+<li><span class="arithmatex"><span class="MathJax_Preview">B→\varepsilon</span><script type="math/tex">B→\varepsilon</script></span></li>
+</ul>
+<p>根据上面的思路来操作。</p>
 
 
 
@@ -484,15 +565,30 @@
     
     <nav class="md-footer__inner md-grid" aria-label="页脚" >
       
+        
+        <a href="../2%20%E4%BA%8C%E4%B9%89%E6%80%A7/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 2 二义性" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              2 二义性
+            </div>
+          </div>
+        </a>
+      
       
         
-        <a href="1%20%E7%9B%B8%E5%85%B3%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/1%20%E6%AD%A3%E8%A7%84%E5%AE%9A%E4%B9%89/" class="md-footer__link md-footer__link--next" aria-label="下一页: 1 正规定义" rel="next">
+        <a href="../4%20%E6%8F%90%E5%B7%A6%E5%9B%A0%E5%AD%90/" class="md-footer__link md-footer__link--next" aria-label="下一页: 4 提左因子" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              1 正规定义
+              4 提左因子
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -523,14 +619,14 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="assets/javascripts/bundle.37e9125f.min.js"></script>
+      <script src="../../assets/javascripts/bundle.37e9125f.min.js"></script>
       
-        <script src="mathjax-config.js"></script>
+        <script src="../../mathjax-config.js"></script>
       
-        <script src="comment.js"></script>
+        <script src="../../comment.js"></script>
       
         <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
