@@ -352,21 +352,21 @@
   <h1>3 自动机相关的算法</h1>
 
 <h2 id="nfa-dfa">NFA 转 DFA</h2>
-<p>问题：用计算机很难在 NFA 上跑模拟看串 $x$ 是否会被接受（需要回溯）。</p>
+<p>问题：用计算机很难在 NFA 上跑模拟看串 <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> 是否会被接受（需要回溯）。</p>
 <p><strong>子集构造法</strong>可以将一个 NFA 转换成 DFA。</p>
 <p>首先需要给出一些函数方便下面使用：</p>
 <ol>
-<li>$\varepsilon\text{-closure}(s):=c(s)$，从状态 $s$ 出发，只用 $\varepsilon$ 转换能达到的<strong>状态集合</strong>。</li>
-<li>$\varepsilon\text{-closure}(T):=c(T)=\cup_{s\in T}c(s)$，相当于从一个状态集合能达到的所有状态集合的并。</li>
-<li>$\text{move}(T,a):=m(T,a)=\cup_{s\in T} m(s,a)$，把 $\text{move}(s,a)$ 拓展成 $T$ 的多态函数。</li>
+<li><span class="arithmatex"><span class="MathJax_Preview">\varepsilon\text{-closure}(s):=c(s)</span><script type="math/tex">\varepsilon\text{-closure}(s):=c(s)</script></span>，从状态 <span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span> 出发，只用 <span class="arithmatex"><span class="MathJax_Preview">\varepsilon</span><script type="math/tex">\varepsilon</script></span> 转换能达到的<strong>状态集合</strong>。</li>
+<li><span class="arithmatex"><span class="MathJax_Preview">\varepsilon\text{-closure}(T):=c(T)=\cup_{s\in T}c(s)</span><script type="math/tex">\varepsilon\text{-closure}(T):=c(T)=\cup_{s\in T}c(s)</script></span>，相当于从一个状态集合能达到的所有状态集合的并。</li>
+<li><span class="arithmatex"><span class="MathJax_Preview">\text{move}(T,a):=m(T,a)=\cup_{s\in T} m(s,a)</span><script type="math/tex">\text{move}(T,a):=m(T,a)=\cup_{s\in T} m(s,a)</script></span>，把 <span class="arithmatex"><span class="MathJax_Preview">\text{move}(s,a)</span><script type="math/tex">\text{move}(s,a)</script></span> 拓展成 <span class="arithmatex"><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span> 的多态函数。</li>
 </ol>
-<p>输入的 NFA 所有可能的输入字母表记为 $\Sigma$；</p>
-<p>输出的 DFA 的状态集合记为 $D_S$，对应的转换表记为 $D_T$。</p>
-<p><strong>初始状态</strong>：$D_S={c(s_0)}$，$s_0$ 是 NFA 的开始状态，并且尚未标记（在这里，标记以 $^<em>$ 记）
+<p>输入的 NFA 所有可能的输入字母表记为 <span class="arithmatex"><span class="MathJax_Preview">\Sigma</span><script type="math/tex">\Sigma</script></span>；</p>
+<p>输出的 DFA 的状态集合记为 <span class="arithmatex"><span class="MathJax_Preview">D_S</span><script type="math/tex">D_S</script></span>，对应的转换表记为 <span class="arithmatex"><span class="MathJax_Preview">D_T</span><script type="math/tex">D_T</script></span>。</p>
+<p><strong>初始状态</strong>：<span class="arithmatex"><span class="MathJax_Preview">D_S=\{c(s_0)\}</span><script type="math/tex">D_S=\{c(s_0)\}</script></span>，<span class="arithmatex"><span class="MathJax_Preview">s_0</span><script type="math/tex">s_0</script></span> 是 NFA 的开始状态，并且尚未标记（在这里，标记以 <span class="arithmatex"><span class="MathJax_Preview">^*</span><script type="math/tex">^*</script></span> 记）
 $$
 \begin{aligned}
 &amp;\textbf{while }(D_S\text{有未被标记的状态}T):\newline
-&amp;\quad\quad T=T^</em>;\newline
+&amp;\quad\quad T=T^*;\newline
 &amp;\quad\quad \textbf{for }(\text{符号}a\text{ : }\Sigma):\newline
 &amp;\quad\quad\quad\quad U=c(m(T,a));\newline
 &amp;\quad\quad\quad\quad D_T[T,a]=U;\newline
@@ -444,6 +444,10 @@ X --&gt; 1: ε
     
     
       <script src="../../assets/javascripts/bundle.37e9125f.min.js"></script>
+      
+        <script src="../../mathjax-config.js"></script>
+      
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
     
   </body>

@@ -452,7 +452,7 @@
 </tr>
 <tr>
 <td>空串</td>
-<td>长度为 0 的特殊串，用 $\varepsilon$ 表示</td>
+<td>长度为 0 的特殊串，用 <span class="arithmatex"><span class="MathJax_Preview">\varepsilon</span><script type="math/tex">\varepsilon</script></span> 表示</td>
 </tr>
 <tr>
 <td>语言</td>
@@ -465,19 +465,19 @@
 </tbody>
 </table>
 <h2 id="_2">字母表上的运算</h2>
-<p>（1）连接：$x$ 和 $y$ 的连接记作 $xy$。</p>
-<p>（2）幂：多次连接，$s^i=s^{i-1}s$。</p>
+<p>（1）连接：<span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span> 的连接记作 <span class="arithmatex"><span class="MathJax_Preview">xy</span><script type="math/tex">xy</script></span>。</p>
+<p>（2）幂：多次连接，<span class="arithmatex"><span class="MathJax_Preview">s^i=s^{i-1}s</span><script type="math/tex">s^i=s^{i-1}s</script></span>。</p>
 <h2 id="_3">语言上的运算</h2>
-<p>假设 $L,M$ 都是语言，则</p>
-<p>（1）并：$L\cup M={s|s\in L\text{ or }s\in M}$；</p>
-<p>（2）连接：$LM={st|s\in L\text{ and }t\in M}$；</p>
-<p>（3）闭包：$L^*=\cup_{i=0}^\infty L^i$；</p>
-<p>（4）正闭包：$L^+=\cup_{i=1}^\infty L^i$。</p>
+<p>假设 <span class="arithmatex"><span class="MathJax_Preview">L,M</span><script type="math/tex">L,M</script></span> 都是语言，则</p>
+<p>（1）并：<span class="arithmatex"><span class="MathJax_Preview">L\cup M=\{s|s\in L\text{ or }s\in M\}</span><script type="math/tex">L\cup M=\{s|s\in L\text{ or }s\in M\}</script></span>；</p>
+<p>（2）连接：<span class="arithmatex"><span class="MathJax_Preview">LM=\{st|s\in L\text{ and }t\in M\}</span><script type="math/tex">LM=\{st|s\in L\text{ and }t\in M\}</script></span>；</p>
+<p>（3）闭包：<span class="arithmatex"><span class="MathJax_Preview">L^*=\cup_{i=0}^\infty L^i</span><script type="math/tex">L^*=\cup_{i=0}^\infty L^i</script></span>；</p>
+<p>（4）正闭包：<span class="arithmatex"><span class="MathJax_Preview">L^+=\cup_{i=1}^\infty L^i</span><script type="math/tex">L^+=\cup_{i=1}^\infty L^i</script></span>。</p>
 <h2 id="_4">正规式</h2>
-<p>一个正规式 $r$ 表示一个语言 $L(r)$，规则如下。</p>
-<p>（Ⅰ）$\varepsilon$ 是正规式，表示语言 ${\varepsilon}$；</p>
-<p>（Ⅱ）若 $a\in \Sigma$，则 $a$ 是正规式，表示语言 ${a}$；</p>
-<p>（Ⅲ）若 $r,s$ 是正规式，则
+<p>一个正规式 <span class="arithmatex"><span class="MathJax_Preview">r</span><script type="math/tex">r</script></span> 表示一个语言 <span class="arithmatex"><span class="MathJax_Preview">L(r)</span><script type="math/tex">L(r)</script></span>，规则如下。</p>
+<p>（Ⅰ）<span class="arithmatex"><span class="MathJax_Preview">\varepsilon</span><script type="math/tex">\varepsilon</script></span> 是正规式，表示语言 <span class="arithmatex"><span class="MathJax_Preview">\{\varepsilon\}</span><script type="math/tex">\{\varepsilon\}</script></span>；</p>
+<p>（Ⅱ）若 <span class="arithmatex"><span class="MathJax_Preview">a\in \Sigma</span><script type="math/tex">a\in \Sigma</script></span>，则 <span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span> 是正规式，表示语言 <span class="arithmatex"><span class="MathJax_Preview">\{a\}</span><script type="math/tex">\{a\}</script></span>；</p>
+<p>（Ⅲ）若 <span class="arithmatex"><span class="MathJax_Preview">r,s</span><script type="math/tex">r,s</script></span> 是正规式，则
 $$
 \begin{aligned}
 (r)|(s)&amp;→L(r)|L(s)\newline
@@ -497,15 +497,24 @@ $$
 &amp;d_n→r_n
 \end{aligned}
 $$
-这里面 $d_i$ 是各不相同的名字（不是符号），每个 $r_i$ 是 $\Sigma\cup{d_1,...,d_{i-1}}$ 上的正规式。</p>
+这里面 <span class="arithmatex"><span class="MathJax_Preview">d_i</span><script type="math/tex">d_i</script></span> 是各不相同的名字（不是符号），每个 <span class="arithmatex"><span class="MathJax_Preview">r_i</span><script type="math/tex">r_i</script></span> 是 <span class="arithmatex"><span class="MathJax_Preview">\Sigma\cup\{d_1,...,d_{i-1}\}</span><script type="math/tex">\Sigma\cup\{d_1,...,d_{i-1}\}</script></span> 上的正规式。</p>
 <h3 id="_6">例子</h3>
-<p>$$
+<div class="arithmatex">
+<div class="MathJax_Preview">
 \begin{aligned}
-&amp;\boldsymbol{letter_}→A|B|...|Z|a|b|...|z|_\newline
+&amp;\boldsymbol{letter\_}→A|B|...|Z|a|b|...|z|\_\newline
 &amp;\boldsymbol{digit}→0|1|...|9\newline
-&amp;\boldsymbol{id}→\boldsymbol{letter_}(\boldsymbol{letter_}|\boldsymbol{digit})^*
+&amp;\boldsymbol{id}→\boldsymbol{letter\_}(\boldsymbol{letter\_}|\boldsymbol{digit})^*
 \end{aligned}
-$$</p>
+</div>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&\boldsymbol{letter\_}→A|B|...|Z|a|b|...|z|\_\newline
+&\boldsymbol{digit}→0|1|...|9\newline
+&\boldsymbol{id}→\boldsymbol{letter\_}(\boldsymbol{letter\_}|\boldsymbol{digit})^*
+\end{aligned}
+</script>
+</div>
 
 
 
@@ -583,6 +592,10 @@ $$</p>
     
     
       <script src="../../assets/javascripts/bundle.37e9125f.min.js"></script>
+      
+        <script src="../../mathjax-config.js"></script>
+      
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
     
   </body>

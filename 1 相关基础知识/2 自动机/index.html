@@ -434,22 +434,22 @@
 <h2 id="nfa">NFA</h2>
 <h3 id="_1">定义</h3>
 <p>一个数学模型，包括：</p>
-<p>（Ⅰ）有限的状态集合 $S$；</p>
-<p>（Ⅱ）输入符号集合 $\Sigma$（不考虑 $\varepsilon\in \Sigma$）；</p>
-<p>（Ⅲ）转换函数 $\text{move}:S\times(\Sigma\cup{\varepsilon})→\mathscr{P}(S)$；</p>
+<p>（Ⅰ）有限的状态集合 <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span>；</p>
+<p>（Ⅱ）输入符号集合 <span class="arithmatex"><span class="MathJax_Preview">\Sigma</span><script type="math/tex">\Sigma</script></span>（不考虑 <span class="arithmatex"><span class="MathJax_Preview">\varepsilon\in \Sigma</span><script type="math/tex">\varepsilon\in \Sigma</script></span>）；</p>
+<p>（Ⅲ）转换函数 <span class="arithmatex"><span class="MathJax_Preview">\text{move}:S\times(\Sigma\cup\{\varepsilon\})→\mathscr{P}(S)</span><script type="math/tex">\text{move}:S\times(\Sigma\cup\{\varepsilon\})→\mathscr{P}(S)</script></span>；</p>
 <blockquote>
-<p>这里写的有点逆天，实际上就是指 move 函数接收两个参数，表示当前位于状态 $S_i$，当接收到某个字符 $i\in\Sigma\cup{\varepsilon}$ 时会跳转到什么状态（因为可能有很多个，所以是 $S$ 的幂集的一个元素）。</p>
+<p>这里写的有点逆天，实际上就是指 move 函数接收两个参数，表示当前位于状态 <span class="arithmatex"><span class="MathJax_Preview">S_i</span><script type="math/tex">S_i</script></span>，当接收到某个字符 <span class="arithmatex"><span class="MathJax_Preview">i\in\Sigma\cup\{\varepsilon\}</span><script type="math/tex">i\in\Sigma\cup\{\varepsilon\}</script></span> 时会跳转到什么状态（因为可能有很多个，所以是 <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> 的幂集的一个元素）。</p>
 </blockquote>
-<p>（Ⅳ）唯一的一个开始状态 $s_0$；</p>
-<p>（Ⅴ）接受（终止）状态集合 $F\subseteq S$。</p>
+<p>（Ⅳ）唯一的一个开始状态 <span class="arithmatex"><span class="MathJax_Preview">s_0</span><script type="math/tex">s_0</script></span>；</p>
+<p>（Ⅴ）接受（终止）状态集合 <span class="arithmatex"><span class="MathJax_Preview">F\subseteq S</span><script type="math/tex">F\subseteq S</script></span>。</p>
 <h3 id="nfa_1">NFA 转换表</h3>
-<p>相当于一个矩阵，行是 $S$ 的枚举 $S_i$，列是 $\Sigma\cup{\varepsilon}$ 的枚举 $c_j$，每个元素是 $\text{move}(S_i,c_j)$。</p>
-<p>NFA 接受一个串 $x$，当且仅当 NFA 中存在从开始状态到某个接受状态的路径，此路径上的标记拼成 $x$。</p>
+<p>相当于一个矩阵，行是 <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> 的枚举 <span class="arithmatex"><span class="MathJax_Preview">S_i</span><script type="math/tex">S_i</script></span>，列是 <span class="arithmatex"><span class="MathJax_Preview">\Sigma\cup\{\varepsilon\}</span><script type="math/tex">\Sigma\cup\{\varepsilon\}</script></span> 的枚举 <span class="arithmatex"><span class="MathJax_Preview">c_j</span><script type="math/tex">c_j</script></span>，每个元素是 <span class="arithmatex"><span class="MathJax_Preview">\text{move}(S_i,c_j)</span><script type="math/tex">\text{move}(S_i,c_j)</script></span>。</p>
+<p>NFA 接受一个串 <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>，当且仅当 NFA 中存在从开始状态到某个接受状态的路径，此路径上的标记拼成 <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>。</p>
 <h2 id="dfa">DFA</h2>
 <h3 id="_2">定义</h3>
 <p>DFA 是 NFA 的一个特殊情形，特殊就特殊在</p>
-<p>（Ⅰ）任何状态下没有 $\varepsilon$ 转换；</p>
-<p>（Ⅱ）转换函数变为 $\text{move}:S\times\Sigma→S$，并且可以是一个部分函数。</p>
+<p>（Ⅰ）任何状态下没有 <span class="arithmatex"><span class="MathJax_Preview">\varepsilon</span><script type="math/tex">\varepsilon</script></span> 转换；</p>
+<p>（Ⅱ）转换函数变为 <span class="arithmatex"><span class="MathJax_Preview">\text{move}:S\times\Sigma→S</span><script type="math/tex">\text{move}:S\times\Sigma→S</script></span>，并且可以是一个部分函数。</p>
 
 
 
@@ -527,6 +527,10 @@
     
     
       <script src="../../assets/javascripts/bundle.37e9125f.min.js"></script>
+      
+        <script src="../../mathjax-config.js"></script>
+      
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
     
   </body>
