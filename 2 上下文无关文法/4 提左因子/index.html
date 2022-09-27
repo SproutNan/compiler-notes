@@ -61,11 +61,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#_1" class="md-skip">
-          跳转至
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -363,58 +358,9 @@
       
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          4 提左因子
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         4 提左因子
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    消除左递归
-  </a>
-  
-    <nav class="md-nav" aria-label="消除左递归">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    间接左递归
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    隐藏左递归
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -445,41 +391,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    消除左递归
-  </a>
-  
-    <nav class="md-nav" aria-label="消除左递归">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    间接左递归
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    隐藏左递归
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -495,57 +406,16 @@
 
   <h1>4 提左因子</h1>
 
-<h2 id="_1">消除左递归</h2>
-<p>这里所说的<strong>左递归</strong>是指这样的产生式（<span class="arithmatex"><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> 是一个串）：
-$$
-A\Rightarrow^+A\alpha
-$$
-我们后面要用自根向下的分析方法，这样的产生式在构建分析树时会导致无限循环，所以要消除左递归。</p>
-<p>观察到左递归导致的串集可能是
-$$
-A\alpha\alpha\alpha\cdots
-$$
-形式的，我们的思路是把左递归改成<strong>右递归</strong>。假设原来的左递归产生式是</p>
+<p><strong>问题</strong>：自上而下分析中，对于某个前缀重合的式子，可以通过推迟决定的方式来减少回溯操作。</p>
+<p>比如，给定文法</p>
 <ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">A→A\alpha|\beta</span><script type="math/tex">A→A\alpha|\beta</script></span></li>
+<li><span class="arithmatex"><span class="MathJax_Preview">A→\alpha\beta_1|\alpha\beta_2</span><script type="math/tex">A→\alpha\beta_1|\alpha\beta_2</script></span></li>
 </ul>
-<p>可以用相应的非左递归文法</p>
+<p>如果输入的前缀是 <span class="arithmatex"><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> 推导出的某个非空串，则在看完 <span class="arithmatex"><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> 的部分之前，尚不知道下一步选择 <span class="arithmatex"><span class="MathJax_Preview">1</span><script type="math/tex">1</script></span> 还是 <span class="arithmatex"><span class="MathJax_Preview">2</span><script type="math/tex">2</script></span>，但是可以选择一个 <span class="arithmatex"><span class="MathJax_Preview">\alpha A'</span><script type="math/tex">\alpha A'</script></span>，相当于拓长了推导链，待到看完 <span class="arithmatex"><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> 之后，就可以对 <span class="arithmatex"><span class="MathJax_Preview">A'</span><script type="math/tex">A'</script></span> 做选择。</p>
 <ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">A→\beta A'</span><script type="math/tex">A→\beta A'</script></span></li>
-<li><span class="arithmatex"><span class="MathJax_Preview">A'→\alpha|A'|\varepsilon</span><script type="math/tex">A'→\alpha|A'|\varepsilon</script></span></li>
+<li><span class="arithmatex"><span class="MathJax_Preview">A→\alpha A'</span><script type="math/tex">A→\alpha A'</script></span></li>
+<li><span class="arithmatex"><span class="MathJax_Preview">A'→\beta_1|\beta_2</span><script type="math/tex">A'→\beta_1|\beta_2</script></span></li>
 </ul>
-<p>来替代。</p>
-<blockquote>
-<p>更一般地，产生式</p>
-<ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">A→A\alpha_1|...|A\alpha_m|\beta_1|...|\beta_n</span><script type="math/tex">A→A\alpha_1|...|A\alpha_m|\beta_1|...|\beta_n</script></span></li>
-</ul>
-<p>可以用</p>
-<ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">A→\beta_1A'|...|\beta_nA'</span><script type="math/tex">A→\beta_1A'|...|\beta_nA'</script></span></li>
-<li><span class="arithmatex"><span class="MathJax_Preview">A'→\alpha_1A'|...|\alpha_mA'|\varepsilon</span><script type="math/tex">A'→\alpha_1A'|...|\alpha_mA'|\varepsilon</script></span></li>
-</ul>
-<p>来替代。</p>
-<p>只要理解了左递归文法产生的句型结构，就不难写。</p>
-</blockquote>
-<h3 id="_2">间接左递归</h3>
-<p>如何消除两步或多步推导产生的左递归？</p>
-<ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">S→Aa|b</span><script type="math/tex">S→Aa|b</script></span></li>
-<li><span class="arithmatex"><span class="MathJax_Preview">A→Sd|\varepsilon</span><script type="math/tex">A→Sd|\varepsilon</script></span></li>
-</ul>
-<p>这里 <span class="arithmatex"><span class="MathJax_Preview">S\Rightarrow Aa\Rightarrow Sda</span><script type="math/tex">S\Rightarrow Aa\Rightarrow Sda</script></span> 是左递归形式的，我们可以把多次推导直接带入到第二个产生式里，即第二个产生式变成</p>
-<ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">A→Aad|bd|\varepsilon</span><script type="math/tex">A→Aad|bd|\varepsilon</script></span></li>
-</ul>
-<p>对这个式子消除直接的左递归即可。</p>
-<h3 id="_3">隐藏左递归</h3>
-<p>间接左递归的特例，如</p>
-<ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">A→BAd</span><script type="math/tex">A→BAd</script></span></li>
-<li><span class="arithmatex"><span class="MathJax_Preview">B→\varepsilon</span><script type="math/tex">B→\varepsilon</script></span></li>
-</ul>
-<p>根据上面的思路来操作。</p>
 
 
 

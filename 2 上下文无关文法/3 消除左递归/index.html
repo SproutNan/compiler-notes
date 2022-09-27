@@ -373,28 +373,15 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    消除左递归
-  </a>
-  
-    <nav class="md-nav" aria-label="消除左递归">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
     间接左递归
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
     隐藏左递归
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -453,28 +440,15 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    消除左递归
-  </a>
-  
-    <nav class="md-nav" aria-label="消除左递归">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
     间接左递归
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
     隐藏左递归
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -495,7 +469,6 @@
 
   <h1>3 消除左递归</h1>
 
-<h2 id="_1">消除左递归</h2>
 <p>这里所说的<strong>左递归</strong>是指这样的产生式（<span class="arithmatex"><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> 是一个串）：
 $$
 A\Rightarrow^+A\alpha
@@ -528,7 +501,7 @@ $$
 <p>来替代。</p>
 <p>只要理解了左递归文法产生的句型结构，就不难写。</p>
 </blockquote>
-<h3 id="_2">间接左递归</h3>
+<h3 id="_1">间接左递归</h3>
 <p>如何消除两步或多步推导产生的左递归？</p>
 <ul>
 <li><span class="arithmatex"><span class="MathJax_Preview">S→Aa|b</span><script type="math/tex">S→Aa|b</script></span></li>
@@ -539,7 +512,7 @@ $$
 <li><span class="arithmatex"><span class="MathJax_Preview">A→Aad|bd|\varepsilon</span><script type="math/tex">A→Aad|bd|\varepsilon</script></span></li>
 </ul>
 <p>对这个式子消除直接的左递归即可。</p>
-<h3 id="_3">隐藏左递归</h3>
+<h3 id="_2">隐藏左递归</h3>
 <p>间接左递归的特例，如</p>
 <ul>
 <li><span class="arithmatex"><span class="MathJax_Preview">A→BAd</span><script type="math/tex">A→BAd</script></span></li>
