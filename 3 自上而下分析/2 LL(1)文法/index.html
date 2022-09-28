@@ -24,6 +24,14 @@
         
       
       
+  
+  
+    
+    
+  
+  
+  <style>:root{--md-admonition-icon--test:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21Z"/></svg>');}</style>
+
 
     
     
@@ -625,17 +633,20 @@
 </ul>
 </blockquote>
 <h4 id="_3">算法</h4>
-<p>!!! info "计算 <span class="arithmatex"><span class="MathJax_Preview">FIRST(X)</span><script type="math/tex">FIRST(X)</script></span>，<span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 是某个终结符或非终结符"</p>
-<pre><code>如果 $X$ 是某个终结符，则 $FIRST(X)=\{X\}$
-
-如果 $X$ 是某个非终结符，遍历所有其产生式 $X→Y_1Y_2...Y_k$，递归计算每一个产生式中的每一个 $FIRST(Y_i)$，这很容易做到
-
-- 要么全都**包含**空 \varepsilon（$FIRST(X)=FIRST(X)\cup\varepsilon$）
-
-- 要么出现了某个满足条件的非终结符 $a$（$FIRST(X)=FIRST(X)\cup a$）
-
-如果 $X$ 是某个非终结符，且某个产生式是 $X→\varepsilon$，则直接 $FIRST(X)=FIRST(X)\cup\varepsilon$。
-</code></pre>
+<div class="admonition info">
+<p class="admonition-title">计算 <span class="arithmatex"><span class="MathJax_Preview">FIRST(X)</span><script type="math/tex">FIRST(X)</script></span>，<span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 是某个终结符或非终结符</p>
+<p>如果 <span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 是某个终结符，则 <span class="arithmatex"><span class="MathJax_Preview">FIRST(X)=\{X\}</span><script type="math/tex">FIRST(X)=\{X\}</script></span></p>
+<p>如果 <span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 是某个非终结符，遍历所有其产生式 <span class="arithmatex"><span class="MathJax_Preview">X→Y_1Y_2...Y_k</span><script type="math/tex">X→Y_1Y_2...Y_k</script></span>，递归计算每一个产生式中的每一个 <span class="arithmatex"><span class="MathJax_Preview">FIRST(Y_i)</span><script type="math/tex">FIRST(Y_i)</script></span>，这很容易做到</p>
+<ul>
+<li>
+<p>要么全都<strong>包含</strong>空 \varepsilon（<span class="arithmatex"><span class="MathJax_Preview">FIRST(X)=FIRST(X)\cup\varepsilon</span><script type="math/tex">FIRST(X)=FIRST(X)\cup\varepsilon</script></span>）</p>
+</li>
+<li>
+<p>要么出现了某个满足条件的非终结符 <span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span>（<span class="arithmatex"><span class="MathJax_Preview">FIRST(X)=FIRST(X)\cup a</span><script type="math/tex">FIRST(X)=FIRST(X)\cup a</script></span>）</p>
+</li>
+</ul>
+<p>如果 <span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 是某个非终结符，且某个产生式是 <span class="arithmatex"><span class="MathJax_Preview">X→\varepsilon</span><script type="math/tex">X→\varepsilon</script></span>，则直接 <span class="arithmatex"><span class="MathJax_Preview">FIRST(X)=FIRST(X)\cup\varepsilon</span><script type="math/tex">FIRST(X)=FIRST(X)\cup\varepsilon</script></span>。</p>
+</div>
 <p>（Ⅱ）计算 <span class="arithmatex"><span class="MathJax_Preview">FIRST(X_1...X_n)</span><script type="math/tex">FIRST(X_1...X_n)</script></span>，其中每个 <span class="arithmatex"><span class="MathJax_Preview">X_i</span><script type="math/tex">X_i</script></span> 都是某个终结符或非终结符，结果按下面的来走：</p>
 <ul>
 <li><span class="arithmatex"><span class="MathJax_Preview">FIRST(X_1)</span><script type="math/tex">FIRST(X_1)</script></span> 中的所有非 <span class="arithmatex"><span class="MathJax_Preview">\varepsilon</span><script type="math/tex">\varepsilon</script></span> 符号</li>
