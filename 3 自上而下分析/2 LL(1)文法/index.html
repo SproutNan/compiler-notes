@@ -639,7 +639,7 @@
 <p>如果 <span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 是某个非终结符，遍历所有其产生式 <span class="arithmatex"><span class="MathJax_Preview">X→Y_1Y_2...Y_k</span><script type="math/tex">X→Y_1Y_2...Y_k</script></span>，递归计算每一个产生式中的每一个 <span class="arithmatex"><span class="MathJax_Preview">FIRST(Y_i)</span><script type="math/tex">FIRST(Y_i)</script></span>，这很容易做到</p>
 <ul>
 <li>
-<p>要么全都<strong>包含</strong>空 \varepsilon（<span class="arithmatex"><span class="MathJax_Preview">FIRST(X)=FIRST(X)\cup\varepsilon</span><script type="math/tex">FIRST(X)=FIRST(X)\cup\varepsilon</script></span>）</p>
+<p>要么全都<strong>包含</strong>空 <span class="arithmatex"><span class="MathJax_Preview">\varepsilon</span><script type="math/tex">\varepsilon</script></span>（<span class="arithmatex"><span class="MathJax_Preview">FIRST(X)=FIRST(X)\cup\varepsilon</span><script type="math/tex">FIRST(X)=FIRST(X)\cup\varepsilon</script></span>）</p>
 </li>
 <li>
 <p>要么出现了某个满足条件的非终结符 <span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span>（<span class="arithmatex"><span class="MathJax_Preview">FIRST(X)=FIRST(X)\cup a</span><script type="math/tex">FIRST(X)=FIRST(X)\cup a</script></span>）</p>
@@ -647,12 +647,17 @@
 </ul>
 <p>如果 <span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 是某个非终结符，且某个产生式是 <span class="arithmatex"><span class="MathJax_Preview">X→\varepsilon</span><script type="math/tex">X→\varepsilon</script></span>，则直接 <span class="arithmatex"><span class="MathJax_Preview">FIRST(X)=FIRST(X)\cup\varepsilon</span><script type="math/tex">FIRST(X)=FIRST(X)\cup\varepsilon</script></span>。</p>
 </div>
-<p>（Ⅱ）计算 <span class="arithmatex"><span class="MathJax_Preview">FIRST(X_1...X_n)</span><script type="math/tex">FIRST(X_1...X_n)</script></span>，其中每个 <span class="arithmatex"><span class="MathJax_Preview">X_i</span><script type="math/tex">X_i</script></span> 都是某个终结符或非终结符，结果按下面的来走：</p>
-<ul>
-<li><span class="arithmatex"><span class="MathJax_Preview">FIRST(X_1)</span><script type="math/tex">FIRST(X_1)</script></span> 中的所有非 <span class="arithmatex"><span class="MathJax_Preview">\varepsilon</span><script type="math/tex">\varepsilon</script></span> 符号</li>
-<li>如果 <span class="arithmatex"><span class="MathJax_Preview">\varepsilon</span><script type="math/tex">\varepsilon</script></span> 在 <span class="arithmatex"><span class="MathJax_Preview">FIRST(X_1),...,FIRST(X_i)</span><script type="math/tex">FIRST(X_1),...,FIRST(X_i)</script></span> 中，那么应当把上面的下标 1 改成 <span class="arithmatex"><span class="MathJax_Preview">i+1</span><script type="math/tex">i+1</script></span></li>
-<li>如果所有的 <span class="arithmatex"><span class="MathJax_Preview">FIRST(X_i)</span><script type="math/tex">FIRST(X_i)</script></span> 都只有 <span class="arithmatex"><span class="MathJax_Preview">\varepsilon</span><script type="math/tex">\varepsilon</script></span>，最终的结果也只有它。</li>
-</ul>
+<div class="admonition info">
+<p class="admonition-title">计算 <span class="arithmatex"><span class="MathJax_Preview">FIRST(X_1...X_n)</span><script type="math/tex">FIRST(X_1...X_n)</script></span>，其中每个 <span class="arithmatex"><span class="MathJax_Preview">X_i</span><script type="math/tex">X_i</script></span> 都是某个终结符或非终结符</p>
+</div>
+<div class="highlight"><pre><span></span><code>结果按下面的步骤来获得：
+
+- $FIRST(X_1)$ 中的所有非 $\varepsilon$ 符号
+
+- 如果 $\varepsilon$ 在 $FIRST(X_1),...,FIRST(X_i)$ 中，那么应当把上面的下标 1 改成 $i+1$
+
+- 如果所有的 $FIRST(X_i)$ 都只有 $\varepsilon$，最终的结果也只有它。
+</code></pre></div>
 <h3 id="_4">后继符号集</h3>
 <ul>
 <li>如果 <span class="arithmatex"><span class="MathJax_Preview">\varepsilon\in FIRST(\alpha)</span><script type="math/tex">\varepsilon\in FIRST(\alpha)</script></span>，这里 <span class="arithmatex"><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> 是非终结符 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 的某个选择，说明还需要考虑 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 之后的符号。</li>
