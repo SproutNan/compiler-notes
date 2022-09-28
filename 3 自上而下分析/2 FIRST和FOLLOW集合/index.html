@@ -497,6 +497,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    例子
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -579,6 +586,13 @@
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     算法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    例子
   </a>
   
 </li>
@@ -701,6 +715,18 @@ $$</p>
 <p>如果 <span class="arithmatex"><span class="MathJax_Preview">B→...A</span><script type="math/tex">B→...A</script></span> 或者 <span class="arithmatex"><span class="MathJax_Preview">B→...A\beta</span><script type="math/tex">B→...A\beta</script></span>，<span class="arithmatex"><span class="MathJax_Preview">\varepsilon \in FIRST(\beta)</span><script type="math/tex">\varepsilon \in FIRST(\beta)</script></span>，则将 <span class="arithmatex"><span class="MathJax_Preview">FOLLOW(B)</span><script type="math/tex">FOLLOW(B)</script></span> 加入到 <span class="arithmatex"><span class="MathJax_Preview">FOLLOW(A)</span><script type="math/tex">FOLLOW(A)</script></span></p>
 </li>
 </ul>
+</div>
+<h3 id="_6">例子</h3>
+<div class="admonition abstract">
+<p class="admonition-title">对下面文法的每个非终结符求 FOLLOW 集合</p>
+<ul>
+<li><span class="arithmatex"><span class="MathJax_Preview">E→TE'</span><script type="math/tex">E→TE'</script></span></li>
+<li><span class="arithmatex"><span class="MathJax_Preview">E'→+TE'|\varepsilon</span><script type="math/tex">E'→+TE'|\varepsilon</script></span></li>
+<li><span class="arithmatex"><span class="MathJax_Preview">T→FT'</span><script type="math/tex">T→FT'</script></span></li>
+<li><span class="arithmatex"><span class="MathJax_Preview">T'→*FT'|\varepsilon</span><script type="math/tex">T'→*FT'|\varepsilon</script></span></li>
+<li><span class="arithmatex"><span class="MathJax_Preview">F→(E)|\textbf{id}</span><script type="math/tex">F→(E)|\textbf{id}</script></span></li>
+</ul>
+<p>需要对整个文法进行循环遍历，不断对所有的 <span class="arithmatex"><span class="MathJax_Preview">FOLLOW</span><script type="math/tex">FOLLOW</script></span> 集合扩充，当某一次遍历的过程中结果不再变化，表示当前结果集为最终结果。</p>
 </div>
 
 
