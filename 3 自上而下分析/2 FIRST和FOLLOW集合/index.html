@@ -13,7 +13,7 @@
     
     
       
-        <title>2 LL(1)文法 - Compiler Notes</title>
+        <title>2 FIRST和FOLLOW集合 - Compiler Notes</title>
       
     
     
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2 LL(1)文法
+              2 FIRST和FOLLOW集合
             
           </span>
         </div>
@@ -412,8 +412,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../1%20%E4%B8%80%E8%88%AC%E6%96%B9%E6%B3%95/" class="md-nav__link">
-        1 一般方法
+      <a href="../1%20%E8%87%AA%E4%B8%8A%E8%80%8C%E4%B8%8B%E5%88%86%E6%9E%90%E5%92%8CLL%281%29%E6%96%87%E6%B3%95/" class="md-nav__link">
+        1 自上而下分析和LL(1)文法
       </a>
     </li>
   
@@ -434,12 +434,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          2 LL(1)文法
+          2 FIRST和FOLLOW集合
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        2 LL(1)文法
+        2 FIRST和FOLLOW集合
       </a>
       
         
@@ -457,14 +457,6 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    分析预定义
-  </a>
-  
-    <nav class="md-nav" aria-label="分析预定义">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
     开始符号集
   </a>
   
@@ -472,7 +464,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     算法
   </a>
   
@@ -482,9 +474,9 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
     后继符号集
   </a>
   
@@ -492,14 +484,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     算法
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -549,14 +536,6 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    分析预定义
-  </a>
-  
-    <nav class="md-nav" aria-label="分析预定义">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
     开始符号集
   </a>
   
@@ -564,7 +543,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     算法
   </a>
   
@@ -574,9 +553,9 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
     后继符号集
   </a>
   
@@ -584,14 +563,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     算法
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -615,13 +589,9 @@
                   
 
 
-  <h1>2 LL(1)文法</h1>
+  <h1>2 FIRST和FOLLOW集合</h1>
 
-<p><strong>LL(1) 文法</strong>的意思是：【从左向右的扫描输入串】【产生最左推导】【每次查看下一个符号就可以做决策】</p>
-<p>如果要避免回溯，应当做到的场景就是：面对一个非终结符，如果指派了某个选择，那么这个选择绝不是虚假的。也就是说，如果选这个选择不能完成匹配，当时选其他的选择肯定也不能完成匹配。</p>
-<p>要避免回溯，前提条件就是要对文法消除左递归，已经介绍过。</p>
-<h2 id="_1">分析预定义</h2>
-<h3 id="_2">开始符号集</h3>
+<h2 id="_1">开始符号集</h2>
 <ul>
 <li>对于文法的某个句型 <span class="arithmatex"><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span>，其开始符号集合 <span class="arithmatex"><span class="MathJax_Preview">FIRST(\alpha)</span><script type="math/tex">FIRST(\alpha)</script></span> 是说，当这个句型经过若干次推导后，不以非终结符打头了，换言之是以某个终结符 <span class="arithmatex"><span class="MathJax_Preview">b</span><script type="math/tex">b</script></span> 打头的，那么这个终结符 <span class="arithmatex"><span class="MathJax_Preview">b\in FIRST(\alpha)</span><script type="math/tex">b\in FIRST(\alpha)</script></span>，后者就是由所有这样的 <span class="arithmatex"><span class="MathJax_Preview">b</span><script type="math/tex">b</script></span> 组成的。</li>
 </ul>
@@ -632,7 +602,7 @@
 <li>用<strong>提左因子</strong>的办法，可以把所有可能导致开始符号集合相交的那些选择合并为一个选择，直到他们分道扬镳。</li>
 </ul>
 </blockquote>
-<h4 id="_3">算法</h4>
+<h4 id="_2">算法</h4>
 <div class="admonition info">
 <p class="admonition-title">计算 <span class="arithmatex"><span class="MathJax_Preview">FIRST(X)</span><script type="math/tex">FIRST(X)</script></span>，<span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 是某个终结符或非终结符</p>
 <p>如果 <span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 是某个终结符，则 <span class="arithmatex"><span class="MathJax_Preview">FIRST(X)=\{X\}</span><script type="math/tex">FIRST(X)=\{X\}</script></span></p>
@@ -662,7 +632,7 @@
 </li>
 </ul>
 </div>
-<h3 id="_4">后继符号集</h3>
+<h2 id="_3">后继符号集</h2>
 <ul>
 <li>如果 <span class="arithmatex"><span class="MathJax_Preview">\varepsilon\in FIRST(\alpha)</span><script type="math/tex">\varepsilon\in FIRST(\alpha)</script></span>，这里 <span class="arithmatex"><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> 是非终结符 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 的某个选择，说明还需要考虑 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 之后的符号。</li>
 <li>定义 <span class="arithmatex"><span class="MathJax_Preview">FOLLOW(A)</span><script type="math/tex">FOLLOW(A)</script></span> 是，从开始符号开始推导，所有可以出现在非终结符 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 之后的终结符 <span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span> 的集合。</li>
@@ -672,7 +642,7 @@
 <li>如果记输入结束标志是 <span class="arithmatex"><span class="MathJax_Preview">\$</span><script type="math/tex">\$</script></span>，且 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 是某个句型最右边的符号，那么规定 <span class="arithmatex"><span class="MathJax_Preview">\$\in FOLLOW(A)</span><script type="math/tex">\$\in FOLLOW(A)</script></span>。</li>
 </ul>
 </blockquote>
-<h4 id="_5">算法</h4>
+<h4 id="_4">算法</h4>
 <p>计算 <span class="arithmatex"><span class="MathJax_Preview">FOLLOW(X)</span><script type="math/tex">FOLLOW(X)</script></span> 时，根据 <span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 的不同位置可以分为下面的几种情况。</p>
 <p>（1）<span class="arithmatex"><span class="MathJax_Preview">\boldsymbol{X}</span><script type="math/tex">\boldsymbol{X}</script></span> <strong>是开始符号</strong>。回想一下，开始符号是一个非终结符，它代表着推导的最低层式子。所以结束标志 <span class="arithmatex"><span class="MathJax_Preview">\$\in FOLLOW(X)</span><script type="math/tex">\$\in FOLLOW(X)</script></span>。</p>
 <p>（2）<strong>形如</strong> <span class="arithmatex"><span class="MathJax_Preview">\boldsymbol{S→\alpha X\beta}</span><script type="math/tex">\boldsymbol{S→\alpha X\beta}</script></span>，<strong>且</strong> <span class="arithmatex"><span class="MathJax_Preview">\boldsymbol{FIRST(\beta)}</span><script type="math/tex">\boldsymbol{FIRST(\beta)}</script></span> <strong>不包含</strong> <span class="arithmatex"><span class="MathJax_Preview">\boldsymbol\varepsilon</span><script type="math/tex">\boldsymbol\varepsilon</script></span>。使用这条产生式推导，那么 <span class="arithmatex"><span class="MathJax_Preview">FIRST(\beta)</span><script type="math/tex">FIRST(\beta)</script></span> 的元素就都是 <span class="arithmatex"><span class="MathJax_Preview">FOLLOW(X)</span><script type="math/tex">FOLLOW(X)</script></span> 的元素。
@@ -721,7 +691,7 @@ $$</p>
     <nav class="md-footer__inner md-grid" aria-label="页脚" >
       
         
-        <a href="../1%20%E4%B8%80%E8%88%AC%E6%96%B9%E6%B3%95/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 1 一般方法" rel="prev">
+        <a href="../1%20%E8%87%AA%E4%B8%8A%E8%80%8C%E4%B8%8B%E5%88%86%E6%9E%90%E5%92%8CLL%281%29%E6%96%87%E6%B3%95/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 1 自上而下分析和LL(1)文法" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -730,7 +700,7 @@ $$</p>
               <span class="md-footer__direction">
                 上一页
               </span>
-              1 一般方法
+              1 自上而下分析和LL(1)文法
             </div>
           </div>
         </a>

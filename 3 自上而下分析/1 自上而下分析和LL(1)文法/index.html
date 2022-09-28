@@ -13,7 +13,7 @@
     
     
       
-        <title>1 一般方法 - Compiler Notes</title>
+        <title>1 自上而下分析和LL(1)文法 - Compiler Notes</title>
       
     
     
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1 一般方法
+              1 自上而下分析和LL(1)文法
             
           </span>
         </div>
@@ -415,7 +415,7 @@
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        1 一般方法
+        1 自上而下分析和LL(1)文法
       </a>
       
     </li>
@@ -429,8 +429,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../2%20LL%281%29%E6%96%87%E6%B3%95/" class="md-nav__link">
-        2 LL(1)文法
+      <a href="../2%20FIRST%E5%92%8CFOLLOW%E9%9B%86%E5%90%88/" class="md-nav__link">
+        2 FIRST和FOLLOW集合
       </a>
     </li>
   
@@ -474,11 +474,14 @@
                   
 
 
-  <h1>1 一般方法</h1>
+  <h1>1 自上而下分析和LL(1)文法</h1>
 
 <p><strong>自上而下分析</strong>宗旨是为输入串寻找最左推导，也就是说在分析树上不断地试探、回溯，得到一个能够接收给定串的分析树。</p>
 <p>这个分析方法导致的问题主要是回溯带来的代价不可预测，因为实际上每一步是贪心的，即使这一步成功了，很多步之后可能导致无路可走，被迫回到最开始的起点，对分析的复杂度造成挑战。</p>
 <p><strong>问题</strong>：能否避免回溯？</p>
+<p><strong>LL(1) 文法</strong>的意思是：【从左向右的扫描输入串】【产生最左推导】【每次查看下一个符号就可以做决策】</p>
+<p>如果要避免回溯，应当做到的场景就是：面对一个非终结符，如果指派了某个选择，那么这个选择绝不是虚假的。也就是说，如果选这个选择不能完成匹配，当时选其他的选择肯定也不能完成匹配。</p>
+<p>要避免回溯，前提条件就是要对文法消除左递归，已经介绍过。</p>
 
 
 
@@ -515,13 +518,13 @@
       
       
         
-        <a href="../2%20LL%281%29%E6%96%87%E6%B3%95/" class="md-footer__link md-footer__link--next" aria-label="下一页: 2 LL(1)文法" rel="next">
+        <a href="../2%20FIRST%E5%92%8CFOLLOW%E9%9B%86%E5%90%88/" class="md-footer__link md-footer__link--next" aria-label="下一页: 2 FIRST和FOLLOW集合" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 下一页
               </span>
-              2 LL(1)文法
+              2 FIRST和FOLLOW集合
             </div>
           </div>
           <div class="md-footer__button md-icon">
