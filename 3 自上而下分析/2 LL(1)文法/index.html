@@ -673,15 +673,34 @@
 </ul>
 </blockquote>
 <h4 id="_5">算法</h4>
-<p>计算 <span class="arithmatex"><span class="MathJax_Preview">FOLLOW(A)</span><script type="math/tex">FOLLOW(A)</script></span>，<span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 是某个非终结符</p>
-<p>？</p>
-<blockquote>
+<p>计算 <span class="arithmatex"><span class="MathJax_Preview">FOLLOW(X)</span><script type="math/tex">FOLLOW(X)</script></span> 时，根据 <span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 的不同位置可以分为下面的几种情况。</p>
+<p>（1）<span class="arithmatex"><span class="MathJax_Preview">\boldsymbol{X}</span><script type="math/tex">\boldsymbol{X}</script></span> <strong>是开始符号</strong>。回想一下，开始符号是一个非终结符，它代表着推导的最低层式子。所以结束标志 <span class="arithmatex"><span class="MathJax_Preview">\$\in FOLLOW(X)</span><script type="math/tex">\$\in FOLLOW(X)</script></span>。</p>
+<p>（2）<strong>形如</strong> <span class="arithmatex"><span class="MathJax_Preview">\boldsymbol{S→\alpha X\beta}</span><script type="math/tex">\boldsymbol{S→\alpha X\beta}</script></span>，<strong>且</strong> <span class="arithmatex"><span class="MathJax_Preview">\boldsymbol{FIRST(\beta)}</span><script type="math/tex">\boldsymbol{FIRST(\beta)}</script></span> <strong>不包含</strong> <span class="arithmatex"><span class="MathJax_Preview">\boldsymbol\varepsilon</span><script type="math/tex">\boldsymbol\varepsilon</script></span>。使用这条产生式推导，那么 <span class="arithmatex"><span class="MathJax_Preview">FIRST(\beta)</span><script type="math/tex">FIRST(\beta)</script></span> 的元素就都是 <span class="arithmatex"><span class="MathJax_Preview">FOLLOW(X)</span><script type="math/tex">FOLLOW(X)</script></span> 的元素。
+$$
+FIRST(\beta)-{\varepsilon}\subseteq FOLLOW(X)
+$$
+（3）<strong>形如</strong> <span class="arithmatex"><span class="MathJax_Preview">\boldsymbol{S→\alpha X}</span><script type="math/tex">\boldsymbol{S→\alpha X}</script></span>。如果对这种产生式，假设存在句型 <span class="arithmatex"><span class="MathJax_Preview">...Sw...</span><script type="math/tex">...Sw...</script></span>，这里 <span class="arithmatex"><span class="MathJax_Preview">w</span><script type="math/tex">w</script></span> 是个终结符，则推导可以得出 <span class="arithmatex"><span class="MathJax_Preview">...\alpha Xw...</span><script type="math/tex">...\alpha Xw...</script></span>，在 <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> 后面的终结符都出现在 <span class="arithmatex"><span class="MathJax_Preview">X</span><script type="math/tex">X</script></span> 的后面，所以 <span class="arithmatex"><span class="MathJax_Preview">FOLLOW(S)</span><script type="math/tex">FOLLOW(S)</script></span> 是 <span class="arithmatex"><span class="MathJax_Preview">FOLLOW(X)</span><script type="math/tex">FOLLOW(X)</script></span> 的子集。
+$$
+FOLLOW(S)\subseteq FOLLOW(X)
+$$
+（4）<strong>形如</strong> <span class="arithmatex"><span class="MathJax_Preview">\boldsymbol{S→\alpha X\beta}</span><script type="math/tex">\boldsymbol{S→\alpha X\beta}</script></span>，<strong>且</strong> <span class="arithmatex"><span class="MathJax_Preview">\boldsymbol{FIRST(\beta)}</span><script type="math/tex">\boldsymbol{FIRST(\beta)}</script></span> <strong>包含</strong> <span class="arithmatex"><span class="MathJax_Preview">\boldsymbol\varepsilon</span><script type="math/tex">\boldsymbol\varepsilon</script></span>。使用这条产生式推导，情况变成（1）或（3）。
+$$
+FIRST(\beta)-{\varepsilon}+FOLLOW(S)\subseteq FOLLOW(X)
+$$</p>
+<div class="admonition info">
+<p class="admonition-title">计算 <span class="arithmatex"><span class="MathJax_Preview">FOLLOW(A)</span><script type="math/tex">FOLLOW(A)</script></span>，<span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 是某个非终结符</p>
 <ul>
-<li>把 <span class="arithmatex"><span class="MathJax_Preview">\$</span><script type="math/tex">\$</script></span> 加入 <span class="arithmatex"><span class="MathJax_Preview">FOLLOW(S)</span><script type="math/tex">FOLLOW(S)</script></span> 中</li>
-<li>如果 <span class="arithmatex"><span class="MathJax_Preview">A→...B\beta</span><script type="math/tex">A→...B\beta</script></span>，则将 <span class="arithmatex"><span class="MathJax_Preview">FIRST(\beta)</span><script type="math/tex">FIRST(\beta)</script></span> 加入到 <span class="arithmatex"><span class="MathJax_Preview">FOLLOW(B)</span><script type="math/tex">FOLLOW(B)</script></span></li>
-<li>如果 <span class="arithmatex"><span class="MathJax_Preview">A→...B</span><script type="math/tex">A→...B</script></span> 或者 <span class="arithmatex"><span class="MathJax_Preview">A→...B\beta</span><script type="math/tex">A→...B\beta</script></span>，<span class="arithmatex"><span class="MathJax_Preview">\varepsilon \in FIRST(\beta)</span><script type="math/tex">\varepsilon \in FIRST(\beta)</script></span>，则</li>
+<li>
+<p>如果 <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> 是开始符号 <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span>，把 <span class="arithmatex"><span class="MathJax_Preview">\$</span><script type="math/tex">\$</script></span> 加入 <span class="arithmatex"><span class="MathJax_Preview">FOLLOW(A)</span><script type="math/tex">FOLLOW(A)</script></span> 中</p>
+</li>
+<li>
+<p>如果 <span class="arithmatex"><span class="MathJax_Preview">B→...A\beta</span><script type="math/tex">B→...A\beta</script></span>，则将 <span class="arithmatex"><span class="MathJax_Preview">FIRST(\beta)</span><script type="math/tex">FIRST(\beta)</script></span> 加入到 <span class="arithmatex"><span class="MathJax_Preview">FOLLOW(A)</span><script type="math/tex">FOLLOW(A)</script></span></p>
+</li>
+<li>
+<p>如果 <span class="arithmatex"><span class="MathJax_Preview">B→...A</span><script type="math/tex">B→...A</script></span> 或者 <span class="arithmatex"><span class="MathJax_Preview">B→...A\beta</span><script type="math/tex">B→...A\beta</script></span>，<span class="arithmatex"><span class="MathJax_Preview">\varepsilon \in FIRST(\beta)</span><script type="math/tex">\varepsilon \in FIRST(\beta)</script></span>，则将 <span class="arithmatex"><span class="MathJax_Preview">FOLLOW(B)</span><script type="math/tex">FOLLOW(B)</script></span> 加入到 <span class="arithmatex"><span class="MathJax_Preview">FOLLOW(A)</span><script type="math/tex">FOLLOW(A)</script></span></p>
+</li>
 </ul>
-</blockquote>
+</div>
 
 
 
